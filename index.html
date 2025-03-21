@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEM Gamified Classroom Hub</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-bottom: 4px solid #00c853;
+    }
+    h1, h2 {
+      margin: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+      background-color: #282828;
+    }
+    nav a {
+      color: #00c853;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+    }
+    .module {
+      background-color: #1f1f1f;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,200,83,0.5);
+      transition: transform 0.3s;
+    }
+    .module:hover {
+      transform: scale(1.02);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00c853;
+      color: #121212;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #00e676;
+    }
+    #puzzle {
+      font-family: monospace;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>STEM Gamified Classroom Hub</h1>
+    <h2>Unlock Learning Through Play</h2>
+  </header>
+
+  <nav>
+    <a href="#physics">Physics Simulations</a>
+    <a href="#cryptography">Cryptography Challenges</a>
+    <a href="#escape">Escape Room</a>
+    <a href="#resources">Resources</a>
+  </nav>
+
+  <div class="container">
+
+    <div id="physics" class="module">
+      <h2>Interactive Physics Simulation</h2>
+      <p>Explore real-time physics simulations.</p>
+      <button onclick="alert('Launching simulation... (Placeholder for integration with PhET or similar physics simulation)')">Launch Sim</button>
+    </div>
+
+    <div id="cryptography" class="module">
+      <h2>Cryptography Challenge</h2>
+      <p>Solve the encrypted message to earn points.</p>
+      <div id="puzzle">Uifsf jt b tfdsfu dpef xjuijo uijt ufyu!</div>
+      <button onclick="solvePuzzle()">Solve Puzzle</button>
+    </div>
+
+    <div id="escape" class="module">
+      <h2>Virtual Escape Room</h2>
+      <p>Use your STEM skills to escape!</p>
+      <button onclick="alert('Entering Escape Room... (Placeholder for Escape Room Game integration)')">Enter Now</button>
+    </div>
+
+    <div id="resources" class="module">
+      <h2>STEM Resources</h2>
+      <p>Access materials, quizzes, and external platforms.</p>
+      <button onclick="alert('Redirecting to Resources... (Placeholder for resource library integration)')">Access Resources</button>
+    </div>
+
+  </div>
+
+  <script>
+    function solvePuzzle() {
+      const encoded = 'Uifsf jt b tfdsfu dpef xjuijo uijt ufyu!';
+      let decoded = '';
+      for (let i = 0; i < encoded.length; i++) {
+        let charCode = encoded.charCodeAt(i);
+        if (charCode >= 65 && charCode <= 90 || charCode >= 97 && charCode <= 122) {
+          decoded += String.fromCharCode(charCode - 1);
+        } else {
+          decoded += encoded[i];
+        }
+      }
+      alert('Decoded message: ' + decoded);
+    }
+  </script>
+
+</body>
+</html>
