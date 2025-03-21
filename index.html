@@ -1,75 +1,70 @@
+
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-  <meta charset=\"UTF-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <title>Classroom Hub - STEMflix</title>
-  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEMflix Classroom Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #141414;
-      color: #ffffff;
       margin: 0;
       padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #141414;
+      color: white;
     }
+
     header {
       padding: 20px;
+      text-align: center;
       background-color: #181818;
       border-bottom: 3px solid #e50914;
-      text-align: center;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #181818;
-      padding: 10px;
-      gap: 20px;
-    }
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #e50914;
-    }
+
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 20px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
+
     .card {
-      background-color: #282828;
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      width: 250px;
+      height: 375px;
+      background-size: cover;
+      background-position: center;
+      margin: 15px;
+      position: relative;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(229, 9, 20, 0.8);
     }
-    button {
-      background-color: #e50914;
-      color: #ffffff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #b20710;
-    }
-    .footer {
+
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      width: 100%;
       text-align: center;
       padding: 10px;
+      font-size: 18px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
       background-color: #181818;
-      font-size: 14px;
-      color: #777;
+      color: #bbb;
     }
   </style>
 </head>
@@ -77,45 +72,30 @@
 
   <header>
     <h1>STEMflix Classroom Hub</h1>
-    <p>Where Education Meets Innovation</p>
+    <p>Explore Learning Like Never Before</p>
   </header>
 
-  <nav>
-    <a href=\"#physics\">Physics</a>
-    <a href=\"#cryptography\">Cryptography</a>
-    <a href=\"#escape-room\">Escape Room</a>
-    <a href=\"#resources\">Resources</a>
-  </nav>
+  <div class="container">
 
-  <div class=\"container\">
-
-    <div id=\"physics\" class=\"card\">
-      <h2>Physics Simulations</h2>
-      <p>Interactive experiments that make physics fun and intuitive.</p>
-      <button onclick=\"alert('Launching Physics Simulation... (Placeholder)')\">Launch Simulation</button>
+    <div class="card" style="background-image:url('https://source.unsplash.com/featured/?physics');" onclick="alert('Going to Physics Simulations')">
+      <div class="card-title">Physics Simulations</div>
     </div>
 
-    <div id=\"cryptography\" class=\"card\">
-      <h2>Cryptography Challenges</h2>
-      <p>Decode mysteries and uncover hidden messages.</p>
-      <button onclick=\"alert('Starting Cryptography Challenge... (Placeholder)')\">Start Challenge</button>
+    <div class="card" style="background-image:url('https://source.unsplash.com/featured/?cryptography');" onclick="alert('Going to Cryptography Challenges')">
+      <div class="card-title">Cryptography Challenges</div>
     </div>
 
-    <div id=\"escape-room\" class=\"card\">
-      <h2>Virtual Escape Room</h2>
-      <p>Solve STEM puzzles and escape the virtual room.</p>
-      <button onclick=\"alert('Entering Virtual Escape Room... (Placeholder)')\">Enter Room</button>
+    <div class="card" style="background-image:url('https://source.unsplash.com/featured/?escape-room');" onclick="alert('Entering Virtual Escape Room')">
+      <div class="card-title">Virtual Escape Room</div>
     </div>
 
-    <div id=\"resources\" class=\"card\">
-      <h2>Classroom Resources</h2>
-      <p>Access assignments, quizzes, and external learning platforms.</p>
-      <button onclick=\"alert('Accessing Resources... (Placeholder)')\">Go to Resources</button>
+    <div class="card" style="background-image:url('https://source.unsplash.com/featured/?technology,resources');" onclick="alert('Accessing Classroom Resources')">
+      <div class="card-title">Resources & Tools</div>
     </div>
 
   </div>
 
-  <div class=\"footer\">
+  <div class="footer">
     &copy; 2025 STEMflix Classroom Hub. All rights reserved.
   </div>
 
