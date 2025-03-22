@@ -23,6 +23,26 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #282828;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
     .container {
       max-width: 1300px;
       margin: auto;
@@ -93,6 +113,15 @@
         width: 90%;
         height: 250px;
       }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
@@ -103,80 +132,23 @@
     <p>Education Meets Innovation</p>
   </header>
 
+  <nav>
+    <a href="pages/cs50/index.html">CS50</a>
+    <a href="pages/csp/index.html">Computer Science Principles</a>
+    <a href="pages/poe/index.html">Principles of Engineering</a>
+    <a href="pages/digitalliteracy/index.html">Digital Literacy</a>
+    <a href="pages/games/index.html">Games</a>
+    <a href="pages/financial/index.html">Money and Finances</a>
+    <a href="pages/codecombat/index.html">Code Combat</a>
+    <a href="pages/iconicdrones/index.html">Iconic Drones</a>
+    <a href="pages/ozaria/index.html">Ozaria</a>
+    <a href="pages/pd/index.html">Professional Development</a>
+    <a href="pages/spheroblueprints/index.html">Sphero Blueprints</a>
+    <a href="pages/resources/index.html">Resources & Tools</a>
+  </nav>
+
   <div class="container">
-
-    <a href="pages/codecombat/index.html">
-        <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?coding,game');">
-            <div class="card-title">Code Combat</div>
-        </div>
-    </a>
-
-    <a href="pages/cs50/index.html">
-        <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?harvard,code');">
-            <div class="card-title">CS50</div>
-        </div>
-    </a>
-
-    <a href="pages/csp/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
-        <div class="card-title">Computer Science Principles</div>
-      </div>
-    </a>
-
-    <a href="pages/digitalliteracy/index.html">
-        <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?digital,technology');">
-            <div class="card-title">Digital Literacy</div>
-        </div>
-    </a>
-
-    <a href="pages/financial/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?money,finance');">
-        <div class="card-title">Money and Finances</div>
-      </div>
-    </a>
-
-    <a href="pages/games/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?games,fun');">
-        <div class="card-title">Games</div>
-      </div>
-    </a>
-
-    <a href="pages/iconicdrones/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?drones');">
-        <div class="card-title">Iconic Drones</div>
-      </div>
-    </a>
-
-    <a href="pages/ozaria/index.html">
-        <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?game,coding');">
-            <div class="card-title">Ozaria</div>
-        </div>
-    </a>
-
-    <a href="pages/pd/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?professional,development');">
-        <div class="card-title">Professional Development</div>
-      </div>
-    </a>
-
-    <a href="pages/poe/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?engineering,technology');">
-        <div class="card-title">Principles of Engineering</div>
-      </div>
-    </a>
-
-    <a href="pages/resources/index.html">
-      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?resources,education');">
-        <div class="card-title">Resources & Tools</div>
-      </div>
-    </a>
-
-    <a href="pages/spheroblueprints/index.html">
-        <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?robotics,education');">
-            <div class="card-title">Sphero Blueprints</div>
-        </div>
-    </a>
-
+    <!-- Cards can be listed here if needed -->
   </div>
 
   <div class="footer">
