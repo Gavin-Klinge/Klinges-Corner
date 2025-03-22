@@ -1,220 +1,168 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Klinge's Corner</title>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   <style>
-     body {
-       margin: 0;
-       padding: 0;
-       font-family: 'Roboto', sans-serif;
-       background-color: #141414;
-       color: white;
-       overflow-x: hidden;
-     }
- 
-     header {
-       padding: 30px;
-       text-align: center;
-       background-color: #181818;
-       border-bottom: 4px solid #e50914;
-       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-     }
- 
-     .container {
-       max-width: 1300px;
-       margin: auto;
-       padding: 40px;
-       display: flex;
-       justify-content: center;
-       flex-wrap: wrap;
-     }
- 
-     .card {
-       width: 280px;
-       height: 420px;
-       background-size: cover;
-       background-position: center;
-       margin: 20px;
-       position: relative;
-       border-radius: 10px;
-       cursor: pointer;
-       box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-       transition: transform 0.3s ease, box-shadow 0.3s ease;
-       overflow: hidden;
-     }
- 
-     .card::before {
-       content: '';
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-       border-radius: 10px;
-     }
- 
-     .card:hover {
-       transform: scale(1.08);
-       box-shadow: 0 6px 20px rgba(229, 9, 20, 0.8);
-     }
- 
-     .card-title {
-       position: absolute;
-       bottom: 0;
-       background: rgba(0,0,0,0.8);
-       width: 100%;
-       text-align: center;
-       padding: 12px;
-       font-size: 20px;
-       border-radius: 0 0 10px 10px;
-       letter-spacing: 0.5px;
-     }
- 
-     .footer {
-       text-align: center;
-       padding: 20px;
-       background-color: #181818;
-       color: #bbb;
-       font-size: 14px;
-       box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
-     }
- 
-     @media (max-width: 768px) {
-       .container {
-         flex-direction: column;
-         align-items: center;
-       }
- 
-       .card {
-         width: 90%;
-         height: 250px;
-       }
-     }
-   </style>
- </head>
- <body>
- 
-   <header>
-     <h1>Klinge's Corner</h1>
-     <p>Education Meets Innovation</p>
-   </header>
- 
-   <div class="container">
- 
-     <a href="pages/codecombat/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?coding,game');">
-             <div class="card-title">Code Combat</div>
-         </div>
-     </a>
- 
-     <a href="pages/cs50/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?harvard,code');">
-             <div class="card-title">CS50</div>
-         </div>
-     </a>
- 
-     <a href="pages/csp/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
-         <div class="card-title">Computer Science Principles</div>
-       </div>
-     </a>
- 
-     <a href="pages/digitalliteracy/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?digital,technology');">
-             <div class="card-title">Digital Literacy</div>
-         </div>
-     </a>
- 
-     <a href="pages/financial/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?money,finance');">
-         <div class="card-title">Money and Finances</div>
-       </div>
-     </a>
- 
-     <a href="pages/games/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?games,fun');">
-         <div class="card-title">Games</div>
-       </div>
-     </a>
- 
-     <a href="pages/pd/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
-         <div class="card-title">Professional Development</div>
-       </div>
-     </a>
- 
-     <a href="pages/poe/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?engineering,technology');">
-         <div class="card-title">Principles of Engineering</div>
-       </div>
-     </a>
- 
-     <a href="pages/iconicdrones/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?drones');">
-         <div class="card-title">Iconic Drones</div>
-       </div>
-     </a>
- 
-     <a href="pages/cs50/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?harvard,code');">
-             <div class="card-title">CS50</div>
-         </div>
-     </a>
- 
-     <a href="pages/ozaria/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?game,coding');">
-             <div class="card-title">Ozaria</div>
-         </div>
-     </a>
- 
-     <a href="pages/codecombat/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?coding,game');">
-             <div class="card-title">Code Combat</div>
-         </div>
-     </a>
- 
-     <a href="pages/digitalliteracy/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?digital,technology');">
-             <div class="card-title">Digital Literacy</div>
-         </div>
-     <a href="pages/pd/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?professional,development');">
-         <div class="card-title">Professional Development</div>
-       </div>
-     </a>
- 
-     <a href="pages/spheroblueprints/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?robotics,education');">
-             <div class="card-title">Sphero Blueprints</div>
-         </div>
-     <a href="pages/poe/index.html">
-       <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?engineering,technology');">
-         <div class="card-title">Principles of Engineering</div>
-       </div>
-     </a>
- 
-     <a href="pages/resources/index.html">
- @@ -177,11 +171,17 @@
-       </div>
-     </a>
- 
-     <a href="pages/spheroblueprints/index.html">
-         <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?robotics,education');">
-             <div class="card-title">Sphero Blueprints</div>
-         </div>
-     </a>
- 
-   </div>
- 
-   <div class="footer">
-     &copy; 2025 Klinge's Corner. All rights reserved.
-   </div>
- 
- </body>
- </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinge's Corner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #141414;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 30px;
+      text-align: center;
+      background-color: #181818;
+      border-bottom: 4px solid #e50914;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 280px;
+      height: 420px;
+      background-size: cover;
+      background-position: center;
+      margin: 20px;
+      position: relative;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      border-radius: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(229, 9, 20, 0.8);
+    }
+
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 20px;
+      border-radius: 0 0 10px 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #181818;
+      color: #bbb;
+      font-size: 14px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+        height: 250px;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Klinge's Corner</h1>
+    <p>Education Meets Innovation</p>
+  </header>
+
+  <div class="container">
+
+    <a href="pages/codecombat/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?coding,game');">
+        <div class="card-title">Code Combat</div>
+      </div>
+    </a>
+
+    <a href="pages/cs50/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?harvard,code');">
+        <div class="card-title">CS50</div>
+      </div>
+    </a>
+
+    <a href="pages/csp/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?computer,code');">
+        <div class="card-title">Computer Science Principles</div>
+      </div>
+    </a>
+
+    <a href="pages/digitalliteracy/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?digital,technology');">
+        <div class="card-title">Digital Literacy</div>
+      </div>
+    </a>
+
+    <a href="pages/financial/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?money,finance');">
+        <div class="card-title">Money and Finances</div>
+      </div>
+    </a>
+
+    <a href="pages/games/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?games,fun');">
+        <div class="card-title">Games</div>
+      </div>
+    </a>
+
+    <a href="pages/iconicdrones/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?drones');">
+        <div class="card-title">Iconic Drones</div>
+      </div>
+    </a>
+
+    <a href="pages/ozaria/index.html">
+      <div class="card" style="background-image:url('https://source.unsplash.com/1600x900/?game,coding');">
+        <div class="card-title">Ozaria</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Klinge's Corner. All rights reserved.
+  </div>
+
+</body>
+</html>
