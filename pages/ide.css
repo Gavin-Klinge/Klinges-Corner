@@ -1,0 +1,316 @@
+/* IDE Container */
+.ide-container {
+    padding: 80px 20px 20px;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--netflix-black);
+}
+
+/* IDE Header */
+.ide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--netflix-dark-grey);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.language-selector select {
+    padding: 0.5rem 1rem;
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    border: 1px solid var(--netflix-light-grey);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.file-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.ide-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--netflix-red);
+    color: var(--netflix-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.ide-btn:hover {
+    background-color: #f40612;
+}
+
+/* IDE Main Content */
+.ide-main {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Editor Container */
+.editor-container {
+    flex: 1;
+    background-color: var(--netflix-dark-grey);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+}
+
+/* Side Panel */
+.side-panel {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--netflix-dark-grey);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.output-container,
+.test-container,
+.grade-container {
+    background-color: var(--netflix-black);
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.output-container h3,
+.test-container h3,
+.grade-container h3 {
+    color: var(--netflix-white);
+    margin-bottom: 1rem;
+}
+
+#output {
+    font-family: monospace;
+    color: var(--netflix-white);
+    white-space: pre-wrap;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Test Cases */
+#testCases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.test-case {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: var(--netflix-white);
+}
+
+.test-case.passed {
+    border-left: 4px solid #00ff00;
+}
+
+.test-case.failed {
+    border-left: 4px solid var(--netflix-red);
+}
+
+/* Grade Controls */
+.grade-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#gradeInput {
+    flex: 1;
+    padding: 0.5rem;
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    border: 1px solid var(--netflix-light-grey);
+    border-radius: 4px;
+}
+
+#gradeResults {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    color: var(--netflix-white);
+}
+
+/* Calendar Container */
+.calendar-container {
+    background-color: var(--netflix-black);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+#calendar {
+    background-color: var(--netflix-dark-grey);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.fc {
+    background-color: var(--netflix-dark-grey);
+    color: var(--netflix-white);
+}
+
+.fc .fc-toolbar-title {
+    color: var(--netflix-white);
+}
+
+.fc .fc-button {
+    background-color: var(--netflix-red);
+    border-color: var(--netflix-red);
+}
+
+.fc .fc-button:hover {
+    background-color: #f40612;
+    border-color: #f40612;
+}
+
+.fc .fc-day-today {
+    background-color: rgba(229, 9, 20, 0.1);
+}
+
+.fc .fc-event {
+    background-color: var(--netflix-red);
+    border-color: var(--netflix-red);
+    cursor: pointer;
+}
+
+/* Class Info */
+.class-info {
+    background-color: var(--netflix-black);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+#classInfo {
+    color: var(--netflix-white);
+    font-size: 0.9rem;
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--netflix-white);
+}
+
+#userName {
+    font-weight: bold;
+}
+
+/* Assignment Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--netflix-dark-grey);
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    color: var(--netflix-white);
+}
+
+.modal .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--netflix-white);
+}
+
+#assignmentDetails {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.assignment-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Feedback Input */
+#feedbackInput {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.5rem;
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    border: 1px solid var(--netflix-light-grey);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ide-main {
+        flex-direction: column;
+    }
+
+    .side-panel {
+        width: 100%;
+    }
+
+    .file-controls {
+        flex-wrap: wrap;
+    }
+
+    .ide-btn {
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .assignment-controls {
+        flex-direction: column;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+} 

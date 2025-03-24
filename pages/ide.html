@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinge's Corner IDE</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="ide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <!-- Calendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="../../index.html">
+                <h1>Klinge's Corner</h1>
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="../../index.html">Home</a>
+            <a href="#editor">Editor</a>
+            <a href="#output">Output</a>
+            <a href="#tests">Tests</a>
+            <a href="#grades">Grades</a>
+        </div>
+        <div class="navbar-auth">
+            <div id="userInfo" class="user-info" style="display: none;">
+                <span id="userName"></span>
+                <button id="logoutBtn" class="ide-btn">Logout</button>
+            </div>
+            <div id="authButtons">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="ide-container">
+        <div class="ide-header">
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="c">C</option>
+                </select>
+            </div>
+            <div class="file-controls">
+                <button id="newFile" class="ide-btn"><i class="fas fa-file"></i> New</button>
+                <button id="saveFile" class="ide-btn"><i class="fas fa-save"></i> Save</button>
+                <button id="loadFile" class="ide-btn"><i class="fas fa-folder-open"></i> Load</button>
+                <button id="submitAssignment" class="ide-btn" style="display: none;"><i class="fas fa-paper-plane"></i> Submit</button>
+            </div>
+        </div>
+
+        <div class="ide-main">
+            <div class="editor-container">
+                <div id="editor"></div>
+            </div>
+            <div class="side-panel">
+                <div class="calendar-container">
+                    <h3>Upcoming Assignments</h3>
+                    <div id="calendar"></div>
+                </div>
+                <div class="class-info">
+                    <h3>Current Class</h3>
+                    <div id="classInfo"></div>
+                </div>
+                <div class="output-container">
+                    <h3>Output</h3>
+                    <div id="output"></div>
+                </div>
+                <div class="test-container">
+                    <h3>Test Cases</h3>
+                    <div id="testCases"></div>
+                    <button id="runTests" class="ide-btn">Run Tests</button>
+                </div>
+                <div class="grade-container">
+                    <h3>Grading</h3>
+                    <div id="gradeResults"></div>
+                    <div class="grade-controls" id="teacherControls" style="display: none;">
+                        <input type="number" id="gradeInput" placeholder="Enter grade" min="0" max="100">
+                        <textarea id="feedbackInput" placeholder="Enter feedback"></textarea>
+                        <button id="submitGrade" class="ide-btn">Submit Grade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Assignment Modal -->
+    <div id="assignmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Assignment Details</h2>
+            <div id="assignmentDetails"></div>
+            <div class="assignment-controls">
+                <button id="startAssignment" class="ide-btn">Start Assignment</button>
+                <button id="submitAssignmentModal" class="ide-btn">Submit Assignment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ide.js"></script>
+</body>
+</html> 
