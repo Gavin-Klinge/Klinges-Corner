@@ -1,3 +1,108 @@
+// Content data with sample courses
+const contentData = {
+    'continue-learning': [
+        {
+            id: 1,
+            title: 'Calculus Basics',
+            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500',
+            progress: 65,
+            description: 'Master the fundamentals of calculus with our comprehensive course.'
+        },
+        {
+            id: 2,
+            title: 'Physics Fundamentals',
+            image: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=500',
+            progress: 30,
+            description: 'Explore the basic principles of physics and mechanics.'
+        },
+        {
+            id: 3,
+            title: 'Chemistry Lab',
+            image: 'https://images.unsplash.com/photo-1603126957883-239d6bf0d3c7?w=500',
+            progress: 45,
+            description: 'Hands-on experiments and chemical reactions explained.'
+        }
+    ],
+    'mathematics': [
+        {
+            id: 4,
+            title: 'Linear Algebra',
+            image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500',
+            description: 'Understand matrices, vectors, and linear transformations.'
+        },
+        {
+            id: 5,
+            title: 'Geometry Mastery',
+            image: 'https://images.unsplash.com/photo-1582289545106-efecf907f21e?w=500',
+            description: 'From basic shapes to complex geometric proofs.'
+        },
+        {
+            id: 6,
+            title: 'Statistics & Probability',
+            image: 'https://images.unsplash.com/photo-1618044733300-9472054094ee?w=500',
+            description: 'Data analysis and probability concepts explained.'
+        },
+        {
+            id: 7,
+            title: 'Trigonometry',
+            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500',
+            description: 'Master sine, cosine, and trigonometric functions.'
+        }
+    ],
+    'science': [
+        {
+            id: 8,
+            title: 'Biology Essentials',
+            image: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=500',
+            description: 'Explore the fundamentals of life sciences.'
+        },
+        {
+            id: 9,
+            title: 'Chemistry 101',
+            image: 'https://images.unsplash.com/photo-1603126957883-239d6bf0d3c7?w=500',
+            description: 'Introduction to atomic structure and chemical bonds.'
+        },
+        {
+            id: 10,
+            title: 'Physics in Action',
+            image: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=500',
+            description: 'Real-world applications of physics principles.'
+        },
+        {
+            id: 11,
+            title: 'Environmental Science',
+            image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500',
+            description: 'Understanding our planet and ecosystems.'
+        }
+    ],
+    'programming': [
+        {
+            id: 12,
+            title: 'Python for Beginners',
+            image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500',
+            description: 'Start your programming journey with Python.'
+        },
+        {
+            id: 13,
+            title: 'Web Development',
+            image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500',
+            description: 'Build modern websites with HTML, CSS, and JavaScript.'
+        },
+        {
+            id: 14,
+            title: 'Data Structures',
+            image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500',
+            description: 'Essential computer science concepts explained.'
+        },
+        {
+            id: 15,
+            title: 'Machine Learning',
+            image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500',
+            description: 'Introduction to AI and machine learning algorithms.'
+        }
+    ]
+};
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
@@ -86,161 +191,143 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Authentication functionality
-const loginModal = document.getElementById('loginModal');
-const signupModal = document.getElementById('signupModal');
+const authModal = document.getElementById('authModal');
 const loginBtn = document.querySelector('.login-btn');
-const signupBtn = document.querySelector('.signup-btn');
-const closeBtns = document.querySelectorAll('.auth-modal .close');
-const showSignupLink = document.getElementById('showSignup');
-const showLoginLink = document.getElementById('showLogin');
+const closeBtn = document.querySelector('.modal .close');
+const authTabs = document.querySelectorAll('.auth-tab');
+const authForms = document.querySelectorAll('.auth-form');
+
+// Show/hide modal
+loginBtn.addEventListener('click', () => {
+    authModal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+    authModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === authModal) {
+        authModal.style.display = 'none';
+    }
+});
+
+// Tab switching
+authTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const targetForm = tab.dataset.tab;
+        
+        authTabs.forEach(t => t.classList.remove('active'));
+        authForms.forEach(f => f.classList.remove('active'));
+        
+        tab.classList.add('active');
+        document.getElementById(`${targetForm}Form`).classList.add('active');
+    });
+});
+
+// Form submission
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
 
-// Show/hide modals
-function showModal(modal) {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-function hideModal(modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Event listeners for modal controls
-loginBtn.addEventListener('click', () => showModal(loginModal));
-signupBtn.addEventListener('click', () => showModal(signupModal));
-
-closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        hideModal(loginModal);
-        hideModal(signupModal);
-        clearForms();
-    });
-});
-
-showSignupLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    hideModal(loginModal);
-    showModal(signupModal);
-});
-
-showLoginLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    hideModal(signupModal);
-    showModal(loginModal);
-});
-
-// Close modals when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === loginModal) hideModal(loginModal);
-    if (e.target === signupModal) hideModal(signupModal);
-});
-
-// Form handling
-function clearForms() {
-    loginForm.reset();
-    signupForm.reset();
-    clearMessages();
-}
-
-function clearMessages() {
-    document.querySelectorAll('.error-message, .success-message').forEach(msg => {
-        msg.classList.remove('show');
-    });
-}
-
-function showMessage(element, message, isError = false) {
-    const messageElement = document.createElement('div');
-    messageElement.className = isError ? 'error-message' : 'success-message';
-    messageElement.textContent = message;
-    element.appendChild(messageElement);
-    messageElement.classList.add('show');
-    setTimeout(() => messageElement.remove(), 3000);
-}
-
-// Login form submission
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    clearMessages();
-
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    const rememberMe = document.getElementById('rememberMe').checked;
-
+    const email = loginForm.querySelector('input[type="email"]').value;
+    const password = loginForm.querySelector('input[type="password"]').value;
+    
     try {
-        // Here you would typically make an API call to your backend
-        // For demo purposes, we'll simulate a successful login
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Store user session
-        localStorage.setItem('user', JSON.stringify({
-            email,
-            name: 'Demo User',
-            rememberMe
-        }));
-
-        showMessage(loginForm, 'Login successful!', false);
-        setTimeout(() => {
-            hideModal(loginModal);
-            updateAuthUI();
-        }, 1500);
+        // Add your authentication logic here
+        console.log('Login:', { email, password });
+        authModal.style.display = 'none';
+        loginForm.reset();
     } catch (error) {
-        showMessage(loginForm, 'Invalid email or password', true);
+        console.error('Login error:', error);
     }
 });
 
-// Signup form submission
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    clearMessages();
-
-    const name = document.getElementById('signupName').value;
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
+    const name = signupForm.querySelector('input[type="text"]').value;
+    const email = signupForm.querySelector('input[type="email"]').value;
+    const password = signupForm.querySelector('input[type="password"]').value;
+    const confirmPassword = signupForm.querySelectorAll('input[type="password"]')[1].value;
+    
     if (password !== confirmPassword) {
-        showMessage(signupForm, 'Passwords do not match', true);
+        alert('Passwords do not match');
         return;
     }
-
+    
     try {
-        // Here you would typically make an API call to your backend
-        // For demo purposes, we'll simulate a successful signup
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Store user session
-        localStorage.setItem('user', JSON.stringify({
-            email,
-            name,
-            rememberMe: false
-        }));
-
-        showMessage(signupForm, 'Account created successfully!', false);
-        setTimeout(() => {
-            hideModal(signupModal);
-            updateAuthUI();
-        }, 1500);
+        // Add your registration logic here
+        console.log('Signup:', { name, email, password });
+        authModal.style.display = 'none';
+        signupForm.reset();
     } catch (error) {
-        showMessage(signupForm, 'Error creating account', true);
+        console.error('Signup error:', error);
     }
 });
 
-// Update UI based on authentication state
-function updateAuthUI() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-        loginBtn.style.display = 'none';
-        signupBtn.style.display = 'none';
-        // You could add a user menu or profile button here
-    } else {
-        loginBtn.style.display = 'block';
-        signupBtn.style.display = 'block';
-    }
+// Content slider functionality
+function initializeSliders() {
+    const sliders = document.querySelectorAll('.content-row');
+    
+    sliders.forEach(slider => {
+        const contentSlider = slider.querySelector('.content-slider');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+        
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                contentSlider.scrollBy({
+                    left: -contentSlider.offsetWidth,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                contentSlider.scrollBy({
+                    left: contentSlider.offsetWidth,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
 }
 
-// Check authentication state on page load
+// Load content items
+function loadContentItems() {
+    const sections = document.querySelectorAll('.content-section');
+    
+    sections.forEach(section => {
+        const title = section.querySelector('h2').textContent.toLowerCase();
+        const slider = section.querySelector('.content-slider');
+        const items = contentData[title.replace(/\s+/g, '-')] || [];
+        
+        items.forEach(item => {
+            const contentItem = document.createElement('div');
+            contentItem.className = 'content-item';
+            contentItem.innerHTML = `
+                <img src="${item.image}" alt="${item.title}">
+                <div class="content-item-info">
+                    <h3 class="content-item-title">${item.title}</h3>
+                    ${item.progress ? `
+                        <div class="progress-bar">
+                            <div class="progress" style="width: ${item.progress}%"></div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            contentItem.addEventListener('click', () => {
+                window.location.href = `/pages/content.html?id=${item.id}`;
+            });
+            
+            slider.appendChild(contentItem);
+        });
+    });
+}
+
+// Initialize everything when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    updateAuthUI();
+    initializeSliders();
+    loadContentItems();
 }); 
