@@ -1,98 +1,105 @@
-# Klinge's Corner Educational Platform
+# Klinge's Corner - Education Meets Innovation
 
-An interactive educational platform featuring an integrated development environment (IDE) for teaching programming and computer science concepts.
+A comprehensive educational platform focused on STEM education and professional development, hosted on GitHub Pages.
+
+## Project Structure
+
+```
+├── index.html              # Main landing page
+├── styles.css              # Main stylesheet
+├── script.js               # Main JavaScript functionality
+├── pages/                  # Subject-specific pages and resources
+│   ├── template.html       # Base template for subject pages
+│   ├── subject.js          # Common subject page functionality
+│   ├── subject.css         # Common subject page styles
+│   ├── mathematics.html    # Mathematics subject page
+│   ├── science.html        # Science subject page
+│   ├── programming.html    # Programming subject page
+│   ├── ide.html           # Interactive Development Environment
+│   ├── ide.js             # IDE functionality
+│   ├── ide.css            # IDE styles
+│   └── resources/         # Subject-specific resources
+│       ├── spheroblueprints/
+│       ├── pd/
+│       ├── poe/
+│       ├── ozaria/
+│       ├── iconicdrones/
+│       ├── finances/
+│       ├── games/
+│       ├── digitalliteracy/
+│       ├── cs50/
+│       ├── csp/
+│       └── codecombat/
+```
 
 ## Features
 
-- Multi-language support (Python, JavaScript, HTML, CSS, C)
-- Real-time code collaboration
-- Automated testing and grading
-- Class management system
-- Assignment tracking and submission
-- Calendar integration
-- Role-based access control (Student/Teacher/Admin)
+- Interactive learning modules
+- Professional development resources
+- Parent hub
+- Classroom hub
+- STEM-focused content
+- Gamified education elements
+- 3D creativity tools
+- Client-side code execution using Pyodide
+- Static site hosting for fast loading
+- Custom domain support (www.klingescorner.com)
 
-## Prerequisites
+## Getting Started
 
-- Node.js (v14 or higher)
-- MongoDB (v4.4 or higher)
-- npm or yarn
+1. Clone the repository
+2. Open `index.html` in your web browser
+3. Navigate through different sections using the navigation menu
 
-## Setup
+## Development
+
+The project uses a template-based approach where subject pages inherit from `template.html`. Common styles and functionality are shared through `subject.css` and `subject.js`.
+
+Since this is a static site hosted on GitHub Pages:
+- All code execution happens client-side
+- No server-side processing is required
+- Content is served directly from GitHub's CDN
+- Updates are deployed automatically when changes are pushed to the main branch
+
+### Local Development
 
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/klinges-corner.git
-cd klinges-corner
-```
+   ```bash
+   git clone https://github.com/yourusername/klinges-corner.git
+   cd klinges-corner
+   ```
 
-2. Install dependencies:
-```bash
-# Install backend dependencies
-cd backend
-npm install
+2. Make your changes locally
 
-# Install frontend dependencies
-cd ../frontend
-npm install
-```
+3. Test your changes by opening `index.html` in your browser
 
-3. Configure environment variables:
-   - Copy `.env.example` to `.env` in the backend directory
-   - Update the variables with your configuration
+4. Commit and push your changes:
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin main
+   ```
 
-4. Start MongoDB:
-```bash
-# On Windows
-net start MongoDB
+### GitHub Pages Deployment
 
-# On macOS/Linux
-sudo service mongod start
-```
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by GitHub Actions.
 
-5. Start the development servers:
-```bash
-# Start backend server (from backend directory)
-npm run dev
+To enable GitHub Pages:
+1. Go to your repository's Settings
+2. Navigate to "Pages" in the sidebar
+3. Under "Source", select "GitHub Actions"
+4. The site will be available at `https://yourusername.github.io/klinges-corner`
 
-# Start frontend server (from frontend directory)
-npm start
-```
+### Custom Domain Setup
 
-## Usage
-
-### For Teachers
-
-1. Create an account with teacher role
-2. Create classes and generate class codes
-3. Create assignments with requirements and test cases
-4. Monitor student submissions and provide feedback
-5. Track student progress and grades
-
-### For Students
-
-1. Create an account with student role
-2. Join classes using class codes provided by teachers
-3. View assignments in the calendar
-4. Complete assignments using the IDE
-5. Submit work and receive feedback
-6. Track grades and progress
-
-## Security Considerations
-
-- All passwords are hashed using bcrypt
-- JWT-based authentication
-- Role-based access control
-- Secure file storage
-- Input validation and sanitization
+The site uses a custom domain (www.klingescorner.com). To set up a custom domain:
+1. Add your domain to the CNAME file
+2. Configure your DNS settings to point to GitHub Pages
+3. Enable HTTPS in your repository's GitHub Pages settings
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Please read our contributing guidelines before submitting pull requests.
 
 ## License
 
@@ -101,9 +108,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - Monaco Editor for the code editor
-- Socket.IO for real-time collaboration
-- FullCalendar for the calendar integration
 - Pyodide for Python execution in the browser
+- Font Awesome for icons
+- GitHub Pages for hosting
 
 ## Support
 

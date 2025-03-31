@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Klinge's Corner</title>
+    <script>
+        // Get the current URL path
+        const path = window.location.pathname;
+        
+        // Remove trailing slash if present
+        const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+        
+        // Handle root path
+        if (cleanPath === '') {
+            window.location.href = '/index.html';
+            return;
+        }
+        
+        // If the path doesn't end with .html, try to load the corresponding .html file
+        if (!cleanPath.endsWith('.html')) {
+            // Try to load the .html file
+            const htmlPath = cleanPath + '.html';
+            fetch(htmlPath)
+                .then(response => {
+                    if (response.ok) {
+                        // If the .html file exists, redirect to it
+                        window.location.href = htmlPath;
+                    } else {
+                        // If the file doesn't exist, try to load index.html in that directory
+                        const indexPath = cleanPath + '/index.html';
+                        fetch(indexPath)
+                            .then(response => {
+                                if (response.ok) {
+                                    window.location.href = indexPath;
+                                } else {
+                                    // If no index.html exists, show the 404 page
+                                    document.getElementById('content').style.display = 'block';
+                                }
+                            })
+                            .catch(() => {
+                                document.getElementById('content').style.display = 'block';
+                            });
+                    }
+                })
+                .catch(() => {
+                    // If there's an error, show the 404 page
+                    document.getElementById('content').style.display = 'block';
+                });
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%),
+                            linear-gradient(-45deg, #f3f4f6 25%, transparent 25%),
+                            linear-gradient(45deg, transparent 75%, #f3f4f6 75%),
+                            linear-gradient(-45deg, transparent 75%, #f3f4f6 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #ffffff;
+        }
+        #content {
+            text-align: center;
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .error-code {
+            font-size: 6em;
+            color: #e5e7eb;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-code">404</div>
+    <div id="content">
+        <h1>Page Not Found</h1>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/">Return to Home</a>
+    </div>
+</body>
+</html> 

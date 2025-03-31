@@ -1,3 +1,25 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Dependencies
 node_modules/
 package-lock.json
@@ -8,30 +30,19 @@ yarn.lock
 .env.local
 .env.*.local
 
-# Build files
+# Build output
 dist/
 build/
+out/
+
+# Cache
+.cache/
+.temp/
+.tmp/
+
+# Local development
+*.local
+
+# Build files
 *.pyc
-__pycache__/
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-.cache/ 
+__pycache__/ 
