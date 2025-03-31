@@ -22,15 +22,15 @@
 }
 
 .subject-hero.mathematics {
-    background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1920');
+    background-image: url('../images/headers/math-header.jpg');
 }
 
 .subject-hero.science {
-    background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1920');
+    background-image: url('../images/headers/science-header.jpg');
 }
 
 .subject-hero.programming {
-    background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1920');
+    background-image: url('../images/headers/programming-header.jpg');
 }
 
 .subject-content {
