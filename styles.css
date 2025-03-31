@@ -53,76 +53,72 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: -10px;
-    right: -10px;
-    bottom: -30px;
+    left: -20px;
+    right: -20px;
+    bottom: -50px;
     background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.85) 40%,
+        rgba(0, 0, 0, 0.6) 80%,
         rgba(0, 0, 0, 0) 100%);
-    backdrop-filter: blur(10px) saturate(110%);
-    -webkit-backdrop-filter: blur(10px) saturate(110%);
-    mask-image: 
-        radial-gradient(100px 50px at 10% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 30% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 50% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 70% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 90% 100%, transparent 30%, black 70%),
-        linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-    -webkit-mask-image:
-        radial-gradient(100px 50px at 10% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 30% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 50% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 70% 100%, transparent 30%, black 70%),
-        radial-gradient(100px 50px at 90% 100%, transparent 30%, black 70%),
-        linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-composite: source-over;
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    clip-path: path('M 0,0 L 100,0 L 100,60 C 95,58 90,62 85,60 C 80,58 75,64 70,62 C 65,60 60,66 55,64 C 50,62 45,68 40,66 C 35,64 30,70 25,68 C 20,66 15,72 10,70 C 5,68 0,62 0,60 L 0,0 Z');
     z-index: -1;
 }
 
 .navbar::after {
     content: '';
     position: absolute;
-    left: -20px;
-    right: -20px;
-    bottom: -40px;
-    height: 60px;
-    background: radial-gradient(ellipse at top,
-        rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 0.2) 40%,
-        rgba(0, 0, 0, 0) 100%);
+    left: -30px;
+    right: -30px;
+    bottom: -70px;
+    height: 70px;
+    background: 
+        radial-gradient(100px 40px at 10% 0%, rgba(0, 0, 0, 0.7) 0%, transparent 70%),
+        radial-gradient(120px 50px at 25% 10%, rgba(0, 0, 0, 0.6) 0%, transparent 70%),
+        radial-gradient(150px 45px at 40% -5%, rgba(0, 0, 0, 0.65) 0%, transparent 70%),
+        radial-gradient(100px 40px at 55% 5%, rgba(0, 0, 0, 0.6) 0%, transparent 70%),
+        radial-gradient(140px 50px at 70% -10%, rgba(0, 0, 0, 0.7) 0%, transparent 70%),
+        radial-gradient(120px 40px at 85% 0%, rgba(0, 0, 0, 0.6) 0%, transparent 70%),
+        radial-gradient(100px 45px at 100% 5%, rgba(0, 0, 0, 0.65) 0%, transparent 70%);
     filter: blur(8px);
-    mask-image: 
-        radial-gradient(80px 40px at 20% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 40% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 60% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 80% 0%, black 30%, transparent 70%);
-    -webkit-mask-image:
-        radial-gradient(80px 40px at 20% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 40% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 60% 0%, black 30%, transparent 70%),
-        radial-gradient(80px 40px at 80% 0%, black 30%, transparent 70%);
-    mask-composite: add;
-    -webkit-mask-composite: source-over;
     z-index: -2;
-    opacity: 0.7;
+}
+
+/* Add a third layer for extra depth */
+.navbar > div:first-child::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    bottom: -90px;
+    height: 90px;
+    background: 
+        radial-gradient(150px 60px at 15% -20%, rgba(0, 0, 0, 0.4) 0%, transparent 70%),
+        radial-gradient(180px 70px at 35% -25%, rgba(0, 0, 0, 0.35) 0%, transparent 70%),
+        radial-gradient(160px 65px at 55% -15%, rgba(0, 0, 0, 0.4) 0%, transparent 70%),
+        radial-gradient(170px 75px at 75% -20%, rgba(0, 0, 0, 0.35) 0%, transparent 70%),
+        radial-gradient(140px 60px at 90% -10%, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+    filter: blur(15px);
+    z-index: -3;
 }
 
 .navbar.scrolled::before {
     background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.8) 60%,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(0, 0, 0, 0.95) 40%,
+        rgba(0, 0, 0, 0.8) 80%,
         rgba(0, 0, 0, 0.6) 100%);
-    backdrop-filter: blur(12px) saturate(110%);
-    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    backdrop-filter: blur(15px) saturate(130%);
+    -webkit-backdrop-filter: blur(15px) saturate(130%);
 }
 
 /* Ensure content below navbar is properly positioned */
 main {
     position: relative;
     z-index: 1;
-    padding-top: calc(100px + 1rem);
+    padding-top: calc(120px + 1rem);
 }
 
 .logo {
