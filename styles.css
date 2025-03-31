@@ -39,140 +39,76 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.02) 30%,
-        rgba(0, 0, 0, 0.05) 100%);
-    backdrop-filter: blur(6px) saturate(110%);
-    -webkit-backdrop-filter: blur(6px) saturate(110%);
+    background: transparent;
     padding: 1rem 4%;
     transition: all 0.5s ease;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 3rem;
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 85%,
-        95% 90%,
-        90% 85%,
-        85% 90%,
-        80% 85%,
-        75% 92%,
-        70% 88%,
-        65% 92%,
-        60% 85%,
-        55% 90%,
-        50% 85%,
-        45% 92%,
-        40% 88%,
-        35% 92%,
-        30% 85%,
-        25% 90%,
-        20% 85%,
-        15% 90%,
-        10% 85%,
-        5% 90%,
-        0 85%
-    );
 }
 
 .navbar::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -10px;
-    right: -10px;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    background: radial-gradient(
-        ellipse at top,
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.02) 50%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    filter: blur(8px);
-    pointer-events: none;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.02) 20%,
+        rgba(0, 0, 0, 0.05) 100%);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%);
+    mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light' in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    mask-size: cover;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light' in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    -webkit-mask-size: cover;
     z-index: -1;
 }
 
 .navbar::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-    height: 40px;
-    background: repeating-radial-gradient(
-        circle at 50% 100%,
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    height: 20px;
+    background: linear-gradient(180deg,
         rgba(0, 0, 0, 0.03) 0%,
-        rgba(0, 0, 0, 0.01) 25%,
-        transparent 50%
-    ), 
-    repeating-radial-gradient(
-        circle at 80% 100%,
-        rgba(0, 0, 0, 0.02) 0%,
-        rgba(0, 0, 0, 0.01) 20%,
-        transparent 40%
-    ),
-    repeating-radial-gradient(
-        circle at 20% 100%,
-        rgba(0, 0, 0, 0.03) 0%,
-        rgba(0, 0, 0, 0.01) 30%,
-        transparent 45%
-    );
-    filter: blur(5px);
-    pointer-events: none;
+        rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light' in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    mask-size: cover;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeBlend mode='soft-light' in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    -webkit-mask-size: cover;
     z-index: -1;
-    transform: scaleY(-1);
 }
 
-.navbar.scrolled {
+.navbar.scrolled::before {
     background: linear-gradient(180deg,
         rgba(0, 0, 0, 0.4) 0%,
         rgba(0, 0, 0, 0.5) 50%,
         rgba(0, 0, 0, 0.45) 100%);
     backdrop-filter: blur(8px) saturate(110%);
     -webkit-backdrop-filter: blur(8px) saturate(110%);
-    padding: 0.5rem 4%;
-}
-
-.navbar.scrolled::before {
-    background: radial-gradient(
-        ellipse at top,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.15) 50%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
-    filter: blur(10px);
 }
 
 .navbar.scrolled::after {
-    background: repeating-radial-gradient(
-        circle at 50% 100%,
-        rgba(0, 0, 0, 0.15) 0%,
-        rgba(0, 0, 0, 0.1) 25%,
-        transparent 50%
-    ),
-    repeating-radial-gradient(
-        circle at 80% 100%,
-        rgba(0, 0, 0, 0.12) 0%,
-        rgba(0, 0, 0, 0.08) 20%,
-        transparent 40%
-    ),
-    repeating-radial-gradient(
-        circle at 20% 100%,
-        rgba(0, 0, 0, 0.15) 0%,
-        rgba(0, 0, 0, 0.1) 30%,
-        transparent 45%
-    );
-    filter: blur(8px);
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 /* Ensure content below navbar is properly positioned */
 main {
     position: relative;
     z-index: 1;
+    padding-top: calc(60px + 1rem); /* Adjust based on navbar height */
 }
 
 .logo {
