@@ -20,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.774);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -39,18 +39,19 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
+    padding: 1rem 4%;
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
     background: rgba(0, 0, 0, 0.8);
-    padding: 0.5rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.5rem 4%;
 }
 
 .logo a {
@@ -108,13 +109,16 @@ body {
 
 /* Featured Hero Section */
 .featured-hero {
-    height: 80vh;
+    min-height: 100vh;
+    padding-top: 80px;
     background: linear-gradient(to top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.4) 100%),
                 url('images/headers/featured-header.jpg') center/cover;
     display: flex;
     align-items: center;
-    padding: 0 4%;
+    padding-left: 4%;
+    padding-right: 4%;
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .featured-content {
@@ -122,6 +126,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
+    padding-top: 2rem;
 }
 
 @keyframes fadeInUp {
@@ -346,6 +351,15 @@ body {
     .content-section h2 {
         font-size: 1.5rem;
         margin-bottom: 0.8rem;
+    }
+
+    .featured-hero {
+        min-height: 100vh;
+        padding-top: 60px;
+    }
+    
+    .featured-content {
+        padding-top: 1rem;
     }
 }
 
