@@ -31,7 +31,7 @@ body {
 }
 
 .logo a {
-    color: #e50914;
+    color: #af0d16;
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
@@ -52,7 +52,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #e50914;
+    color: #af0d16;
 }
 
 .auth-buttons {
@@ -60,7 +60,7 @@ body {
 }
 
 .login-btn {
-    background-color: #e50914;
+    background-color: #af0d16;
     color: #fff;
     border: none;
     padding: 0.5rem 1.2rem;
@@ -137,7 +137,7 @@ body {
 }
 
 .play-btn {
-    background-color: #e50914;
+    background-color: #af0d16;
     color: #fff;
 }
 
@@ -246,7 +246,7 @@ body {
 
 .progress {
     height: 100%;
-    background-color: #e50914;
+    background-color: #af0d16;
     transition: width 0.3s ease;
 }
 
@@ -326,7 +326,7 @@ body {
 }
 
 .auth-tab.active {
-    border-bottom-color: #e50914;
+    border-bottom-color: #af0d16;
 }
 
 .auth-form {
@@ -352,7 +352,7 @@ body {
 }
 
 .auth-form button {
-    background-color: #e50914;
+    background-color: #af0d16;
     color: #fff;
     padding: 1rem;
     border: none;
