@@ -11,6 +11,9 @@ function createHeader(currentPage) {
                 <a href="/pages/life-skills" ${currentPage === 'life-skills' ? 'class="active"' : ''}>Life Skills</a>
                 <a href="/pages/parent-hub" ${currentPage === 'parent-hub' ? 'class="active"' : ''}>Parent Hub</a>
             </div>
+            <div class="auth-buttons">
+                <button class="login-btn">Sign In</button>
+            </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
