@@ -85,7 +85,7 @@ body {
 .featured-hero {
     height: 80vh;
     background: linear-gradient(to top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.4) 100%),
-                url('https://images.unsplash.com/photo-1535136104956-115a2cd67fc4?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover;
+                url('https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover;
     display: flex;
     align-items: center;
     padding: 0 4%;
