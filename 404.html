@@ -11,15 +11,9 @@
         // Remove trailing slash if present
         const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
         
-        // Function to update URL without page reload
-        function updateURL(newPath) {
-            window.history.replaceState({}, '', newPath);
-        }
-        
         // Handle root path
         if (cleanPath === '') {
             window.location.href = 'index.html';
-            updateURL('/');
             return;
         }
         
@@ -30,9 +24,8 @@
             fetch(htmlPath)
                 .then(response => {
                     if (response.ok) {
-                        // If the .html file exists, load it and update URL
+                        // If the .html file exists, load it
                         window.location.href = htmlPath;
-                        updateURL(cleanPath);
                     } else {
                         // If the file doesn't exist, try to load index.html in that directory
                         const indexPath = cleanPath + '/index.html';
@@ -40,7 +33,6 @@
                             .then(response => {
                                 if (response.ok) {
                                     window.location.href = indexPath;
-                                    updateURL(cleanPath + '/');
                                 } else {
                                     // If no index.html exists, show the 404 page
                                     document.getElementById('content').style.display = 'block';
@@ -55,10 +47,6 @@
                     // If there's an error, show the 404 page
                     document.getElementById('content').style.display = 'block';
                 });
-        } else {
-            // If URL already has .html, remove it
-            const cleanUrl = cleanPath.replace('.html', '');
-            updateURL(cleanUrl);
         }
     </script>
     <style>
@@ -127,5 +115,6 @@
         <p>The page you're looking for doesn't exist or has been moved.</p>
         <a href="/">Return to Home</a>
     </div>
+    <script src="url-handler.js"></script>
 </body>
 </html> 
