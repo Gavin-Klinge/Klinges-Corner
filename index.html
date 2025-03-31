@@ -5,25 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klinge's Corner - Education Meets Innovation</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/">Mr. Klinge's Corner</a>
-            </div>
-            <div class="nav-links">
-                <a href="/" class="active">Home</a>
-                <a href="/pages/mathematics">Classroom Hub</a>
-                <a href="/pages/science">Professional Development</a>
-                <a href="/pages/programming">Parent Hub</a>
-            </div>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Header will be dynamically inserted here -->
 
     <main>
         <section class="featured-hero">
@@ -37,7 +23,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section id="today-world" class="content-section">
             <h2>In Today's World</h2>
             <div class="content-row">
                 <div class="content-slider">
@@ -48,8 +34,8 @@
             </div>
         </section>
 
-        <section class="content-section">
-            <h2>Mathematics in Life </h2>
+        <section id="mathematics" class="content-section">
+            <h2>Mathematics in Life</h2>
             <div class="content-row">
                 <div class="content-slider">
                     <!-- Content items will be dynamically loaded here -->
@@ -59,7 +45,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section id="science" class="content-section">
             <h2>Everyday Science</h2>
             <div class="content-row">
                 <div class="content-slider">
@@ -70,7 +56,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section id="programming" class="content-section">
             <h2>Programming Essentials</h2>
             <div class="content-row">
                 <div class="content-slider">
@@ -81,7 +67,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section id="gamified" class="content-section">
             <h2>Gamified Education</h2>
             <div class="content-row">
                 <div class="content-slider">
@@ -92,7 +78,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section id="3d-creativity" class="content-section">
             <h2>3D Creativity</h2>
             <div class="content-row">
                 <div class="content-slider">
@@ -102,10 +88,11 @@
                 <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
-
     </main>
 
-
+    <script src="js/header.js"></script>
+    <script src="js/content-data.js"></script>
+    <script src="js/slider.js"></script>
     <script src="url-handler.js"></script>
     <script src="script.js"></script>
 </body>

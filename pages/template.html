@@ -3,165 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinge's Corner - Education Meets Innovation</title>
+    <title>Klinge's Corner - <span id="page-title">Page Title</span></title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="subject.css">
+    <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            height: 40vh;
+            background: linear-gradient(to top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.4) 100%),
+                        var(--header-bg) center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            margin-bottom: 3rem;
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4% 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-description {
+            font-size: 1.4rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #e6e6e6;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .content-card {
+            background: #2f2f2f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card-description {
+            color: #e6e6e6;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: #af0d16;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #f40612;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                height: 30vh;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-description {
+                font-size: 1.1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/">Mr. Klinge's Corner</a>
-            </div>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/pages/mathematics">Classroom Hub</a>
-                <a href="/pages/science">Professional Development</a>
-                <a href="/pages/programming">Parent Hub</a>
-            </div>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Header will be dynamically inserted here -->
 
-    <header class="subject-hero">
-        <div class="hero-content">
-            <h1>[Subject Name]</h1>
-            <p>[Subject Description]</p>
-        </div>
-    </header>
-
-    <main class="subject-content">
-        <section id="overview" class="overview-section">
-            <h2>Course Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Course Syllabus</h3>
-                    <p>[Course description and objectives]</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-calendar"></i>
-                    <h3>Schedule</h3>
-                    <p>[Course schedule and important dates]</p>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-tasks"></i>
-                    <h3>Requirements</h3>
-                    <p>[Course requirements and prerequisites]</p>
-                </div>
+    <main>
+        <section class="page-header" style="--header-bg: url('../images/placeholder.jpg')">
+            <div class="page-content">
+                <h1 class="page-title" id="page-title">Page Title</h1>
+                <p class="page-description" id="page-description">Page description goes here. This is a brief overview of what users can expect to find on this page.</p>
             </div>
         </section>
 
-        <section id="resources" class="resources-section">
-            <h2>Learning Resources</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Video Lectures</h3>
-                    <ul>
-                        <li><a href="#">Lecture 1</a></li>
-                        <li><a href="#">Lecture 2</a></li>
-                        <li><a href="#">Lecture 3</a></li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Study Materials</h3>
-                    <ul>
-                        <li><a href="#">Notes</a></li>
-                        <li><a href="#">Slides</a></li>
-                        <li><a href="#">Handouts</a></li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-link"></i>
-                    <h3>External Links</h3>
-                    <ul>
-                        <li><a href="#">Resource 1</a></li>
-                        <li><a href="#">Resource 2</a></li>
-                        <li><a href="#">Resource 3</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="assignments" class="assignments-section">
-            <h2>Assignments & Projects</h2>
-            <div class="assignments-grid">
-                <div class="assignment-card">
-                    <div class="assignment-header">
-                        <h3>Assignment 1</h3>
-                        <span class="due-date">Due: [Date]</span>
-                    </div>
-                    <p>[Assignment description]</p>
-                    <div class="assignment-actions">
-                        <button class="submit-btn">Submit</button>
-                        <button class="view-btn">View Details</button>
-                    </div>
-                </div>
-                <!-- More assignment cards -->
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <h2>Contact & Support</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>Email: [Instructor Email]</p>
-                    <p>Office Hours: [Office Hours]</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-slack"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-teams"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+        <section class="page-content">
+            <div class="content-grid">
+                <!-- Content cards will be dynamically loaded here -->
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/pages/mathematics">Classroom Hub</a></li>
-                    <li><a href="/pages/science">Professional Development</a></li>
-                    <li><a href="/pages/programming">Parent Hub</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: contact@klingescorner.com</p>
-                <p>Phone: (555) 123-4567</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
-        </div>
-    </footer>
+    <script src="../js/header.js"></script>
+    <script>
+        // Page-specific configuration
+        const pageConfig = {
+            title: 'Page Title',
+            description: 'Page description goes here. This is a brief overview of what users can expect to find on this page.',
+            headerImage: '../images/placeholder.jpg',
+            content: [
+                {
+                    title: 'Content Title 1',
+                    description: 'Description of the first content item. This can be a brief overview of what users will learn or experience.',
+                    image: '../images/placeholder.jpg',
+                    link: '#'
+                },
+                {
+                    title: 'Content Title 2',
+                    description: 'Description of the second content item. This can be a brief overview of what users will learn or experience.',
+                    image: '../images/placeholder.jpg',
+                    link: '#'
+                },
+                // Add more content items as needed
+            ]
+        };
 
-    <script src="../url-handler.js"></script>
-    <script src="../script.js"></script>
-    <script src="subject.js"></script>
+        // Update page content
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update title and description
+            document.title = `Klinge's Corner - ${pageConfig.title}`;
+            document.getElementById('page-title').textContent = pageConfig.title;
+            document.getElementById('page-description').textContent = pageConfig.description;
+
+            // Update header background
+            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
+
+            // Create content cards
+            const contentGrid = document.querySelector('.content-grid');
+            contentGrid.innerHTML = pageConfig.content.map(item => `
+                <div class="content-card">
+                    <img src="${item.image}" alt="${item.title}" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">${item.title}</h2>
+                        <p class="card-description">${item.description}</p>
+                        <a href="${item.link}" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
 </body>
 </html> 

@@ -4,21 +4,21 @@ const contentData = {
         items: [
             {
                 title: "Digital Transformation",
-                description: "How technology is reshaping education and learning",
-                image: "images/digital-transformation.jpg",
+                description: "Explore how technology is reshaping education and creating new opportunities for learning.",
+                image: "images/content/digital-transformation.jpg",
                 link: "/pages/digital-transformation"
             },
             {
                 title: "Future Skills",
-                description: "Essential skills for tomorrow's workforce",
-                image: "images/future-skills.jpg",
+                description: "Discover the essential skills students need to thrive in tomorrow's workforce.",
+                image: "images/content/future-skills.jpg",
                 link: "/pages/future-skills"
             },
             {
-                title: "Innovation in Education",
-                description: "New approaches to teaching and learning",
-                image: "images/innovation.jpg",
-                link: "/pages/innovation"
+                title: "Global Learning",
+                description: "Learn how technology connects students with global learning opportunities.",
+                image: "images/content/global-learning.jpg",
+                link: "/pages/global-learning"
             }
         ]
     },
@@ -27,21 +27,21 @@ const contentData = {
         items: [
             {
                 title: "Real-World Applications",
-                description: "How math shapes our daily lives",
-                image: "images/math-applications.jpg",
+                description: "See how mathematics is used in everyday life and various careers.",
+                image: "images/content/math-applications.jpg",
                 link: "/pages/math-applications"
             },
             {
                 title: "Problem Solving",
-                description: "Mathematical thinking in everyday situations",
-                image: "images/problem-solving.jpg",
+                description: "Develop critical thinking skills through mathematical problem-solving.",
+                image: "images/content/problem-solving.jpg",
                 link: "/pages/problem-solving"
             },
             {
-                title: "Financial Literacy",
-                description: "Understanding money through mathematics",
-                image: "images/financial-literacy.jpg",
-                link: "/pages/financial-literacy"
+                title: "Interactive Learning",
+                description: "Engage with interactive mathematical concepts and visualizations.",
+                image: "images/content/interactive-math.jpg",
+                link: "/pages/interactive-math"
             }
         ]
     },
@@ -49,22 +49,22 @@ const contentData = {
         title: "Everyday Science",
         items: [
             {
-                title: "Environmental Science",
-                description: "Understanding our world and climate",
-                image: "images/environmental.jpg",
-                link: "/pages/environmental"
-            },
-            {
                 title: "Scientific Method",
-                description: "How science helps us understand the world",
-                image: "images/scientific-method.jpg",
+                description: "Learn how to apply the scientific method in everyday observations.",
+                image: "images/content/scientific-method.jpg",
                 link: "/pages/scientific-method"
             },
             {
-                title: "Science in Action",
-                description: "Real-world scientific discoveries",
-                image: "images/science-action.jpg",
-                link: "/pages/science-action"
+                title: "Environmental Science",
+                description: "Explore environmental concepts and sustainable practices.",
+                image: "images/content/environmental-science.jpg",
+                link: "/pages/environmental-science"
+            },
+            {
+                title: "Science Experiments",
+                description: "Try hands-on experiments that demonstrate scientific principles.",
+                image: "images/content/science-experiments.jpg",
+                link: "/pages/science-experiments"
             }
         ]
     },
@@ -73,21 +73,21 @@ const contentData = {
         items: [
             {
                 title: "Coding Basics",
-                description: "Introduction to programming concepts",
-                image: "images/coding-basics.jpg",
+                description: "Start your programming journey with fundamental concepts.",
+                image: "images/content/coding-basics.jpg",
                 link: "/pages/coding-basics"
             },
             {
                 title: "Web Development",
-                description: "Building the digital world",
-                image: "images/web-dev.jpg",
-                link: "/pages/web-dev"
+                description: "Learn how to create interactive websites and web applications.",
+                image: "images/content/web-development.jpg",
+                link: "/pages/web-development"
             },
             {
-                title: "AI & Machine Learning",
-                description: "The future of computing",
-                image: "images/ai-ml.jpg",
-                link: "/pages/ai-ml"
+                title: "Game Development",
+                description: "Create your own games using programming concepts.",
+                image: "images/content/game-development.jpg",
+                link: "/pages/game-development"
             }
         ]
     },
@@ -95,22 +95,22 @@ const contentData = {
         title: "Gamified Education",
         items: [
             {
-                title: "Educational Games",
-                description: "Learning through play",
-                image: "images/edu-games.jpg",
-                link: "/pages/edu-games"
-            },
-            {
-                title: "Interactive Learning",
-                description: "Engaging educational experiences",
-                image: "images/interactive.jpg",
-                link: "/pages/interactive"
+                title: "Learning Games",
+                description: "Explore educational games that make learning fun and engaging.",
+                image: "images/content/learning-games.jpg",
+                link: "/pages/learning-games"
             },
             {
                 title: "Game Design",
-                description: "Creating educational games",
-                image: "images/game-design.jpg",
+                description: "Learn the principles of game design and educational game creation.",
+                image: "images/content/game-design.jpg",
                 link: "/pages/game-design"
+            },
+            {
+                title: "Interactive Learning",
+                description: "Experience learning through interactive game-based activities.",
+                image: "images/content/interactive-learning.jpg",
+                link: "/pages/interactive-learning"
             }
         ]
     },
@@ -119,21 +119,21 @@ const contentData = {
         items: [
             {
                 title: "3D Modeling",
-                description: "Creating digital objects",
-                image: "images/3d-modeling.jpg",
+                description: "Learn to create 3D models using modern design tools.",
+                image: "images/content/3d-modeling.jpg",
                 link: "/pages/3d-modeling"
             },
             {
                 title: "3D Printing",
-                description: "Bringing ideas to life",
-                image: "images/3d-printing.jpg",
+                description: "Explore the world of 3D printing and rapid prototyping.",
+                image: "images/content/3d-printing.jpg",
                 link: "/pages/3d-printing"
             },
             {
-                title: "Virtual Reality",
-                description: "Immersive learning experiences",
-                image: "images/vr.jpg",
-                link: "/pages/vr"
+                title: "Digital Art",
+                description: "Create digital art and designs using 3D software.",
+                image: "images/content/digital-art.jpg",
+                link: "/pages/digital-art"
             }
         ]
     }

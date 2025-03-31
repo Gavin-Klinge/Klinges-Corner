@@ -373,19 +373,37 @@ body {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
-        background-color: #141414;
+        right: 0;
+        background: #fff;
         padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem;
+        border-bottom: 1px solid #eee;
     }
 
     .mobile-menu-btn {
         display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo a {
+        font-size: 1.2rem;
     }
 
     .featured-title {
@@ -399,5 +417,11 @@ body {
     .content-item {
         width: 200px;
         height: 112px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
     }
 } 

@@ -3,10 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematics - Klinge's Corner</title>
+    <title>Klinge's Corner - Mathematics in Life</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="subject.css">
+    <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            height: 40vh;
+            background: linear-gradient(to top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.4) 100%),
+                        var(--header-bg) center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            margin-bottom: 3rem;
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4% 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-description {
+            font-size: 1.4rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #e6e6e6;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .content-card {
+            background: #2f2f2f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card-description {
+            color: #e6e6e6;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: #af0d16;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #f40612;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                height: 30vh;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-description {
+                font-size: 1.1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,46 +126,90 @@
     </header>
 
     <main>
-        <section class="subject-hero mathematics">
-            <div class="subject-content">
-                <h1>Mathematics</h1>
-                <p>Explore the world of numbers, patterns, and problem-solving</p>
+        <section class="page-header" style="--header-bg: url('../images/headers/math-header.jpg')">
+            <div class="page-content">
+                <h1 class="page-title" id="page-title">Mathematics in Life</h1>
+                <p class="page-description" id="page-description">Discover how mathematics shapes our everyday world and learn practical applications that make complex concepts accessible and engaging.</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2>Popular in Mathematics</h2>
-            <div class="content-row">
-                <div class="content-slider">
-                    <!-- Content will be loaded dynamically -->
-                </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Algebra & Calculus</h2>
-            <div class="content-row">
-                <div class="content-slider">
-                    <!-- Content will be loaded dynamically -->
-                </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Geometry & Trigonometry</h2>
-            <div class="content-row">
-                <div class="content-slider">
-                    <!-- Content will be loaded dynamically -->
-                </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+        <section class="page-content">
+            <div class="content-grid">
+                <!-- Content cards will be dynamically loaded here -->
             </div>
         </section>
     </main>
 
+    <script src="../js/header.js"></script>
+    <script>
+        // Page-specific configuration
+        const pageConfig = {
+            title: 'Mathematics in Life',
+            description: 'Discover how mathematics shapes our everyday world and learn practical applications that make complex concepts accessible and engaging.',
+            headerImage: '../images/headers/math-header.jpg',
+            content: [
+                {
+                    title: 'Real-World Applications',
+                    description: 'Explore how mathematical concepts are used in everyday life, from budgeting to architecture.',
+                    image: '../images/content/math-applications.jpg',
+                    link: '/pages/mathematics/applications'
+                },
+                {
+                    title: 'Problem Solving',
+                    description: 'Develop critical thinking skills through mathematical problem-solving and logical reasoning.',
+                    image: '../images/content/problem-solving.jpg',
+                    link: '/pages/mathematics/problem-solving'
+                },
+                {
+                    title: 'Interactive Learning',
+                    description: 'Engage with interactive mathematical concepts and visualizations that make learning fun.',
+                    image: '../images/content/interactive-math.jpg',
+                    link: '/pages/mathematics/interactive'
+                },
+                {
+                    title: 'Financial Mathematics',
+                    description: 'Learn practical financial concepts and how mathematics helps in making informed decisions.',
+                    image: '../images/content/financial-math.jpg',
+                    link: '/pages/mathematics/financial'
+                },
+                {
+                    title: 'Statistics & Data',
+                    description: 'Understand how statistics and data analysis help us make sense of the world around us.',
+                    image: '../images/content/statistics.jpg',
+                    link: '/pages/mathematics/statistics'
+                },
+                {
+                    title: 'Geometry in Nature',
+                    description: 'Discover the mathematical patterns and geometric principles found in nature.',
+                    image: '../images/content/geometry-nature.jpg',
+                    link: '/pages/mathematics/geometry'
+                }
+            ]
+        };
+
+        // Update page content
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update title and description
+            document.title = `Klinge's Corner - ${pageConfig.title}`;
+            document.getElementById('page-title').textContent = pageConfig.title;
+            document.getElementById('page-description').textContent = pageConfig.description;
+
+            // Update header background
+            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
+
+            // Create content cards
+            const contentGrid = document.querySelector('.content-grid');
+            contentGrid.innerHTML = pageConfig.content.map(item => `
+                <div class="content-card">
+                    <img src="${item.image}" alt="${item.title}" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">${item.title}</h2>
+                        <p class="card-description">${item.description}</p>
+                        <a href="${item.link}" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
 </body>
 </html> 
