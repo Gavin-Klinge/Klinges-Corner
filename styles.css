@@ -178,14 +178,16 @@ body {
 
 /* Content Sections */
 .content-section {
-    padding: 2rem 4%;
-    margin-bottom: 2rem;
+    padding: 1.5rem 4%;
+    margin-bottom: 1.5rem;
 }
 
 .content-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .content-row {
@@ -196,10 +198,10 @@ body {
 
 .content-slider {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.3rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -210,8 +212,8 @@ body {
 
 .content-item {
     flex: 0 0 auto;
-    width: 300px;
-    height: 170px;
+    width: 240px;
+    height: 135px;
     background-color: #2f2f2f;
     border-radius: 4px;
     overflow: hidden;
@@ -242,8 +244,8 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     pointer-events: none;
 }
 
@@ -252,22 +254,23 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1rem;
+    padding: 0.8rem;
     color: #fff;
     z-index: 1;
 }
 
 .content-item-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .content-item-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #e6e6e6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
 }
 
 /* Slider Navigation */
@@ -331,8 +334,13 @@ body {
     }
 
     .content-item {
-        width: 250px;
-        height: 140px;
+        width: 200px;
+        height: 112px;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
     }
 }
 
