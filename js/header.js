@@ -6,13 +6,10 @@ function createHeader(currentPage) {
                 <a href="/">Mr. Klinge's Corner</a>
             </div>
             <div class="nav-links">
-                <a href="/" ${currentPage === 'home' ? 'class="active"' : ''}>Home</a>
-                <a href="/pages/today-world" ${currentPage === 'today-world' ? 'class="active"' : ''}>Today's World</a>
-                <a href="/pages/mathematics" ${currentPage === 'mathematics' ? 'class="active"' : ''}>Mathematics</a>
-                <a href="/pages/science" ${currentPage === 'science' ? 'class="active"' : ''}>Science</a>
-                <a href="/pages/programming" ${currentPage === 'programming' ? 'class="active"' : ''}>Programming</a>
-                <a href="/pages/gamified" ${currentPage === 'gamified' ? 'class="active"' : ''}>Gamified</a>
-                <a href="/pages/3d-creativity" ${currentPage === '3d-creativity' ? 'class="active"' : ''}>3D Creativity</a>
+                <a href="/pages/classroom-hub" ${currentPage === 'classroom-hub' ? 'class="active"' : ''}>Classroom Hub</a>
+                <a href="/pages/professional-development" ${currentPage === 'professional-development' ? 'class="active"' : ''}>Professional Development</a>
+                <a href="/pages/life-skills" ${currentPage === 'life-skills' ? 'class="active"' : ''}>Life Skills</a>
+                <a href="/pages/parent-hub" ${currentPage === 'parent-hub' ? 'class="active"' : ''}>Parent Hub</a>
             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
