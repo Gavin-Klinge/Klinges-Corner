@@ -31,6 +31,16 @@ function initMobileMenu() {
     }
 }
 
+// Handle scroll events
+function handleScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
 // Initialize header on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Get current page from URL
@@ -51,4 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize mobile menu
     initMobileMenu();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Check initial scroll position
+    handleScroll();
 }); 
