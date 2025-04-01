@@ -38,7 +38,7 @@ function initMobileMenu() {
 function handleScroll() {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
