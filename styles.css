@@ -82,7 +82,7 @@ body {
 }
 
 /* Additional cloud layer */
-.navbar > div:first-child::before {
+.navbar::before {
     content: '';
     position: absolute;
     left: -15%;
@@ -95,22 +95,6 @@ body {
     border-radius: 70% 70% 30% 30% / 0 0 100% 100%;
     filter: blur(8px);
     z-index: -3;
-}
-
-/* New cloud layer for more depth */
-.navbar > div:first-child::after {
-    content: '';
-    position: absolute;
-    left: -20%;
-    right: -20%;
-    bottom: -50px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.015);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 80% 80% 20% 20% / 0 0 100% 100%;
-    filter: blur(12px);
-    z-index: -4;
 }
 
 /* Scrolled state */
@@ -128,27 +112,16 @@ body {
     border-radius: 50% 50% 30% 30% / 0 0 100% 100%;
 }
 
-.navbar.scrolled > div:first-child::before {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 60% 60% 40% 40% / 0 0 100% 100%;
-}
-
-.navbar.scrolled > div:first-child::after {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 70% 70% 30% 30% / 0 0 100% 100%;
-}
-
-/* Ensure content below navbar is properly positioned */
-main {
-    position: relative;
-    z-index: 1;
-    padding-top: calc(80px + 1rem);
-}
-
+/* Remove the cloud effect from under the logo */
 .logo {
     flex: 0 0 auto;
     position: relative;
     z-index: 2;
+}
+
+.logo::before,
+.logo::after {
+    display: none;
 }
 
 .logo a {
