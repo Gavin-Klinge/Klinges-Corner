@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom Hub - Klinge's Corner</title>
+    <title>Classroom Hub | Klinge's Corner</title>
+    <meta name="description" content="Access teaching resources, lesson plans, and classroom management tools. Enhance your teaching experience with our comprehensive educator resources.">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../subject.css">
+    <link rel="stylesheet" href="subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .page-header {
             height: 40vh;
@@ -109,97 +113,193 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">Klinge's Corner</a>
-            </div>
-            <div class="nav-links">
-                <a href="classroom-hub.html" class="active">Classroom Hub</a>
-                <a href="professional-development.html">Professional Development</a>
-                <a href="life-skills.html">Life Skills</a>
-                <a href="parent-hub.html">Parent Hub</a>
-            </div>
-            <button class="login-btn">Login</button>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            Klinge's Corner
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/pages/mathematics.html">Mathematics</a>
+            <a href="/pages/science.html">Science</a>
+            <a href="/pages/programming.html">Programming</a>
+            <a href="/pages/parent-hub.html">Parent Hub</a>
+            <a href="/pages/classroom-hub.html" class="active">Classroom Hub</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn">Sign In</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <header class="subject-hero classroom-hub">
+        <div class="subject-content">
+            <h1>Classroom Hub</h1>
+            <p>Access comprehensive teaching resources and tools to create an engaging learning environment.</p>
+        </div>
     </header>
 
     <main>
-        <section class="page-header">
-            <div class="header-content">
-                <h1 id="page-title">Classroom Hub</h1>
-                <p id="page-description">Access digital tools, interactive activities, and assessment strategies to enhance your teaching experience.</p>
+        <section class="overview-section">
+            <div class="page-content">
+                <h2>Overview</h2>
+                <p>Our Classroom Hub provides educators with essential resources and tools for effective teaching and classroom management.</p>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Lesson Planning</h3>
+                        <p>Access customizable lesson plans and teaching materials for all subjects.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Assessment Tools</h3>
+                        <p>Create and manage assessments with our comprehensive testing platform.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-users-cog"></i>
+                        <h3>Classroom Management</h3>
+                        <p>Tools and strategies for effective classroom organization and student engagement.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="page-content">
-            <div class="content-grid">
-                <!-- Content cards will be dynamically loaded here -->
+        <section class="resources-section">
+            <div class="page-content">
+                <h2>Teaching Resources</h2>
+                <p>Explore our collection of teaching materials and professional development resources.</p>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Lesson Materials</h3>
+                        <ul>
+                            <li><a href="#">Lesson Plan Templates</a></li>
+                            <li><a href="#">Activity Worksheets</a></li>
+                            <li><a href="#">Teaching Guides</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Assessment Resources</h3>
+                        <ul>
+                            <li><a href="#">Quiz Builder</a></li>
+                            <li><a href="#">Rubric Templates</a></li>
+                            <li><a href="#">Progress Tracking</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Teaching Tools</h3>
+                        <ul>
+                            <li><a href="#">Virtual Whiteboard</a></li>
+                            <li><a href="#">Interactive Activities</a></li>
+                            <li><a href="#">Classroom Timer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="planning-section">
+            <div class="page-content">
+                <h2>Lesson Planning</h2>
+                <p>Create and organize your lessons with our comprehensive planning tools.</p>
+                
+                <div class="planning-grid">
+                    <div class="planning-card">
+                        <div class="planning-header">
+                            <h3>Weekly Planner</h3>
+                            <span class="planning-date">Current Week</span>
+                        </div>
+                        <p>Organize your weekly lessons and activities efficiently.</p>
+                        <div class="planning-actions">
+                            <button class="view-btn">
+                                Open Planner
+                                <i class="fas fa-calendar-week"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="planning-card">
+                        <div class="planning-header">
+                            <h3>Resource Library</h3>
+                            <span class="planning-status">200+ Resources</span>
+                        </div>
+                        <p>Access our extensive collection of teaching materials.</p>
+                        <div class="planning-actions">
+                            <button class="view-btn">
+                                Browse Library
+                                <i class="fas fa-book-open"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="page-content">
+                <h2>Support Center</h2>
+                <p>Get assistance with your teaching needs from our dedicated support team.</p>
+                
+                <div class="contact-options">
+                    <a href="#" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Support</h3>
+                        <p>Contact our teacher support team</p>
+                    </a>
+                    <a href="#" class="contact-card">
+                        <i class="fas fa-video"></i>
+                        <h3>Video Tutorials</h3>
+                        <p>Watch guided tutorials on using our tools</p>
+                    </a>
+                    <a href="#" class="contact-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Teacher Community</h3>
+                        <p>Connect with other educators</p>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <!-- Footer will be dynamically loaded -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to providing high-quality educational resources for students, parents, and educators.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/pages/faq.html">FAQ</a></li>
+                    <li><a href="/pages/support.html">Support</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
-    <script src="../js/content-data.js"></script>
-    <script>
-        // Page-specific configuration
-        const pageConfig = {
-            title: 'Classroom Hub',
-            description: 'Access digital tools, interactive activities, and assessment strategies to enhance your teaching experience.',
-            headerImage: '../images/headers/classroom-hub.jpg',
-            content: [
-                {
-                    title: 'Digital Tools & Resources',
-                    description: 'Explore a curated collection of digital tools and resources to enhance your teaching and student learning.',
-                    image: '../images/content/digital-tools.jpg',
-                    link: '/pages/digital-tools'
-                },
-                {
-                    title: 'Interactive Activities',
-                    description: 'Engage your students with interactive activities that promote active learning and collaboration.',
-                    image: '../images/content/interactive-activities.jpg',
-                    link: '/pages/interactive-activities'
-                },
-                {
-                    title: 'Assessment Strategies',
-                    description: 'Discover effective assessment strategies and tools to measure student progress and learning outcomes.',
-                    image: '../images/content/assessment-strategies.jpg',
-                    link: '/pages/assessment-strategies'
-                }
-            ]
-        };
-
-        // Update page content
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update title and description
-            document.title = `Klinge's Corner - ${pageConfig.title}`;
-            document.getElementById('page-title').textContent = pageConfig.title;
-            document.getElementById('page-description').textContent = pageConfig.description;
-
-            // Update header background
-            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
-
-            // Create content cards
-            const contentGrid = document.querySelector('.content-grid');
-            contentGrid.innerHTML = pageConfig.content.map(item => `
-                <div class="content-card">
-                    <img src="${item.image}" alt="${item.title}" class="card-image">
-                    <div class="card-content">
-                        <h2 class="card-title">${item.title}</h2>
-                        <p class="card-description">${item.description}</p>
-                        <a href="${item.link}" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            `).join('');
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html> 
