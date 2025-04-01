@@ -49,29 +49,56 @@ body {
     background: transparent;
 }
 
+/* SVG Filter for the cloud effect */
 .navbar::before {
     content: '';
     position: absolute;
-    inset: -10px -10px -60px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 0 0 50% 50% / 0 0 100% 100%;
-    transform: scaleX(1.1);
+    inset: -20px -10px -60px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mask-size: cover;
+    -webkit-mask-size: cover;
     z-index: -1;
+    transform-origin: top;
+    animation: waveEffect 20s infinite linear;
 }
 
 .navbar::after {
     content: '';
     position: absolute;
-    inset: 20px -20px -70px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 0 0 120% 120% / 0 0 100% 100%;
-    transform: scaleX(1.2);
+    inset: 0 0 -40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fff' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fff' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    mask-size: cover;
+    -webkit-mask-size: cover;
     z-index: -2;
-    filter: blur(10px);
+    transform-origin: top;
+    animation: waveEffect 15s infinite linear reverse;
+}
+
+/* Wave animation */
+@keyframes waveEffect {
+    0% {
+        transform: translateX(0) scaleY(1);
+    }
+    50% {
+        transform: translateX(-25%) scaleY(0.95);
+    }
+    100% {
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+
+.navbar.scrolled::before {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 /* Cloud layers */
@@ -101,14 +128,6 @@ body {
     filter: blur(20px);
 }
 
-.navbar.scrolled::before {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 0 0 30% 30% / 0 0 100% 100%;
-    transform: scaleX(1.05);
-}
-
 /* Remove the display: none for the layers */
 .navbar::after,
 .navbar > div:first-child::before,
@@ -135,8 +154,10 @@ main {
     font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
-                 0 0 10px rgba(0, 0, 0, 0.5);
+                 0 0 15px rgba(0, 0, 0, 0.6);
     white-space: nowrap;
+    position: relative;
+    z-index: 3;
 }
 
 .nav-links {
@@ -144,6 +165,8 @@ main {
     align-items: center;
     gap: 2rem;
     flex: 1;
+    position: relative;
+    z-index: 3;
 }
 
 .nav-links a {
@@ -152,7 +175,7 @@ main {
     font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
     transition: color 0.3s ease;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8),
-                 0 0 8px rgba(0, 0, 0, 0.5);
+                 0 0 12px rgba(0, 0, 0, 0.6);
     white-space: nowrap;
 }
 
@@ -411,10 +434,12 @@ main {
         top: 60px;
         left: 0;
         right: 0;
-        background-color: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        padding: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        animation: waveEffect 25s infinite linear;
     }
 
     .mobile-menu-btn {
