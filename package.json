@@ -1,0 +1,12 @@
+{
+  "name": "klinges-corner",
+  "version": "1.0.0",
+  "description": "Mr. Klinge's Corner - Educational Resource Hub",
+  "main": "js/generate-placeholders.js",
+  "scripts": {
+    "generate-images": "node js/generate-placeholders.js"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2"
+  }
+} 
