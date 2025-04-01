@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinge's Corner - <span id="page-title">Page Title</span></title>
+    <meta name="description" content="Explore comprehensive educational content on Klinge's Corner. Access study materials, practice tests, and interactive learning resources.">
+    <title>Subject Page - Klinge's Corner</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/slider.css">
+    <link rel="stylesheet" href="subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --card-bg: rgba(47, 47, 47, 0.6);
@@ -156,10 +160,10 @@
     <!-- Header will be dynamically inserted here -->
 
     <main>
-        <section class="page-header" style="--header-bg: url('../images/placeholder.jpg')">
-            <div class="page-content">
-                <h1 class="page-title" id="page-title">Page Title</h1>
-                <p class="page-description" id="page-description">Page description goes here. This is a brief overview of what users can expect to find on this page.</p>
+        <section class="page-header">
+            <div class="header-content">
+                <h1 class="page-title">Subject Title</h1>
+                <p class="page-description">Comprehensive learning resources and materials for mastering this subject.</p>
             </div>
         </section>
 
@@ -168,56 +172,79 @@
                 <!-- Content cards will be dynamically loaded here -->
             </div>
         </section>
+
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Study Materials</h3>
+                    <p>Access comprehensive study guides, notes, and resources.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Practice Tests</h3>
+                    <p>Test your knowledge with interactive quizzes and assessments.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>Connect with fellow learners and share experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning journey and achievements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Start Learning?</h2>
+                <p>Begin your educational journey with our comprehensive resources.</p>
+                <button class="cta-button" aria-label="Start Learning">
+                    <i class="fas fa-play"></i> Start Now
+                </button>
+            </div>
+        </section>
     </main>
 
-    <script src="../js/header.js"></script>
-    <script>
-        // Page-specific configuration
-        const pageConfig = {
-            title: 'Page Title',
-            description: 'Page description goes here. This is a brief overview of what users can expect to find on this page.',
-            headerImage: '../images/placeholder.jpg',
-            content: [
-                {
-                    title: 'Content Title 1',
-                    description: 'Description of the first content item. This can be a brief overview of what users will learn or experience.',
-                    image: '../images/placeholder.jpg',
-                    link: '#'
-                },
-                {
-                    title: 'Content Title 2',
-                    description: 'Description of the second content item. This can be a brief overview of what users will learn or experience.',
-                    image: '../images/placeholder.jpg',
-                    link: '#'
-                }
-            ]
-        };
-
-        // Update page content
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update title and description
-            document.title = `Klinge's Corner - ${pageConfig.title}`;
-            document.getElementById('page-title').textContent = pageConfig.title;
-            document.getElementById('page-description').textContent = pageConfig.description;
-
-            // Update header background
-            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
-
-            // Create content cards
-            const contentGrid = document.querySelector('.content-grid');
-            contentGrid.innerHTML = pageConfig.content.map(item => `
-                <div class="content-card">
-                    <img src="${item.image}" alt="${item.title}" class="card-image">
-                    <div class="card-content">
-                        <h2 class="card-title">${item.title}</h2>
-                        <p class="card-description">${item.description}</p>
-                        <a href="${item.link}" class="card-link">
-                            Learn More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to making STEM education accessible, engaging, and inspiring for everyone.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
-            `).join('');
-        });
-    </script>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Study Materials</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Practice Tests</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/header-data.js"></script>
+    <script src="subject.js"></script>
 </body>
 </html> 

@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klinge's Corner - Where Education Meets Innovation. Explore STEM subjects, mathematics, science, and programming in an engaging and interactive way.">
     <title>Klinge's Corner - Education Meets Innovation</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header will be dynamically inserted here -->
@@ -17,92 +21,90 @@
                 <h1 class="featured-title">What is STEM?</h1>
                 <p class="featured-description">"Companies today seek graduates who don't just know facts, but who can solve problems, think critically, and innovate. STEM skills can bridge this gap, turning learners into leaders, if you are willing to take a leap of faith"</p>
                 <div class="featured-buttons">
-                    <button class="play-btn"><i class="fas fa-play"></i> Take the dive!</button>
-                    <button class="more-info-btn"><i class="fas fa-info-circle"></i> More Info</button>
+                    <button class="play-btn" aria-label="Start Learning">
+                        <i class="fas fa-play"></i> Take the dive!
+                    </button>
+                    <button class="more-info-btn" aria-label="Learn More">
+                        <i class="fas fa-info-circle"></i> More Info
+                    </button>
                 </div>
             </div>
         </section>
 
         <section id="in-todays-world" class="content-section">
             <h2>In Today's World</h2>
+            <p class="section-description">Explore how STEM concepts shape our modern world and influence everyday life.</p>
             <div class="content-row">
-                <div class="content-slider">
+                <div class="content-slider" role="region" aria-label="Content slider">
                     <!-- Content items will be dynamically loaded here -->
                 </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
         <section id="mathematics-in-life" class="content-section">
             <h2>Mathematics in Life</h2>
+            <p class="section-description">Discover how mathematics influences our daily decisions and shapes the world around us.</p>
             <div class="content-row">
-                <div class="content-slider">
+                <div class="content-slider" role="region" aria-label="Mathematics content slider">
                     <!-- Content items will be dynamically loaded here -->
                 </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
         <section id="everyday-science" class="content-section">
             <h2>Everyday Science</h2>
+            <p class="section-description">Uncover the scientific principles that govern our daily experiences and natural phenomena.</p>
             <div class="content-row">
-                <div class="content-slider">
+                <div class="content-slider" role="region" aria-label="Science content slider">
                     <!-- Content items will be dynamically loaded here -->
                 </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
         <section id="programming-essentials" class="content-section">
             <h2>Programming Essentials</h2>
+            <p class="section-description">Learn the fundamentals of programming and how it powers our digital world.</p>
             <div class="content-row">
-                <div class="content-slider">
+                <div class="content-slider" role="region" aria-label="Programming content slider">
                     <!-- Content items will be dynamically loaded here -->
                 </div>
-                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
         <section class="content-section">
             <h2>Trending Now</h2>
+            <p class="section-description">Stay updated with the latest trends and developments in STEM education.</p>
             <div class="content-row">
+                <div class="content-slider" role="region" aria-label="Trending content slider">
+                    <!-- Content items will be dynamically loaded here -->
+                </div>
                 <button class="slider-arrow prev" aria-label="Previous slide">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <div class="content-slider">
-                    <div class="content-item">
-                        <img src="images/thumbnails/trending1.jpg" alt="Trending Movie 1">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 1</h3>
-                            <p class="content-item-description">Action • Drama • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/trending2.jpg" alt="Trending Movie 2">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 2</h3>
-                            <p class="content-item-description">Comedy • Romance • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/trending3.jpg" alt="Trending Movie 3">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 3</h3>
-                            <p class="content-item-description">Sci-Fi • Adventure • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/trending4.jpg" alt="Trending Movie 4">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 4</h3>
-                            <p class="content-item-description">Thriller • Mystery • 2024</p>
-                        </div>
-                    </div>
-                </div>
                 <button class="slider-arrow next" aria-label="Next slide">
                     <i class="fas fa-chevron-right"></i>
                 </button>
@@ -111,46 +113,54 @@
 
         <section class="content-section">
             <h2>Popular on Klinges Corner</h2>
+            <p class="section-description">Explore our most engaging and popular educational content.</p>
             <div class="content-row">
+                <div class="content-slider" role="region" aria-label="Popular content slider">
+                    <!-- Content items will be dynamically loaded here -->
+                </div>
                 <button class="slider-arrow prev" aria-label="Previous slide">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <div class="content-slider">
-                    <div class="content-item">
-                        <img src="images/thumbnails/popular1.jpg" alt="Popular Movie 1">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 5</h3>
-                            <p class="content-item-description">Action • Drama • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/popular2.jpg" alt="Popular Movie 2">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 6</h3>
-                            <p class="content-item-description">Comedy • Romance • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/popular3.jpg" alt="Popular Movie 3">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 7</h3>
-                            <p class="content-item-description">Sci-Fi • Adventure • 2024</p>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <img src="images/thumbnails/popular4.jpg" alt="Popular Movie 4">
-                        <div class="content-item-info">
-                            <h3 class="content-item-title">Movie Title 8</h3>
-                            <p class="content-item-description">Thriller • Mystery • 2024</p>
-                        </div>
-                    </div>
-                </div>
                 <button class="slider-arrow next" aria-label="Next slide">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to making STEM education accessible, engaging, and inspiring for everyone.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Study Materials</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Practice Tests</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/header.js"></script>
     <script src="js/header-data.js"></script>
