@@ -45,40 +45,43 @@ body {
     align-items: center;
     gap: 3rem;
     height: 80px;
-    background: rgba(20, 20, 20, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 /* Cloud effect */
 .navbar::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -30px;
-    height: 30px;
+    left: -20px;
+    right: -20px;
+    bottom: -50px;
+    height: 50px;
     background: linear-gradient(to bottom, 
-        rgba(20, 20, 20, 0.4) 0%,
-        rgba(20, 20, 20, 0.2) 40%,
-        rgba(20, 20, 20, 0) 100%
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        rgba(255, 255, 255, 0.02) 60%,
+        rgba(255, 255, 255, 0) 100%
     );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 0 0 100% 100% / 0 0 100% 100%;
-    filter: blur(5px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 0 0 60% 60% / 0 0 100% 100%;
+    filter: blur(8px);
+    z-index: -1;
 }
 
 /* Scrolled state */
 .navbar.scrolled {
-    background: rgba(20, 20, 20, 0.6);
+    background: rgba(20, 20, 20, 0.7);
 }
 
 .navbar.scrolled::after {
     background: linear-gradient(to bottom, 
-        rgba(20, 20, 20, 0.6) 0%,
-        rgba(20, 20, 20, 0.3) 40%,
-        rgba(20, 20, 20, 0) 100%
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.06) 30%,
+        rgba(255, 255, 255, 0.03) 60%,
+        rgba(255, 255, 255, 0) 100%
     );
 }
 
