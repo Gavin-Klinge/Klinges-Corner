@@ -1,5 +1,16 @@
 /* Subject Page Styles */
 :root {
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-hover: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #F5F5F7;
+    --text-secondary: rgba(245, 245, 247, 0.8);
+    --accent-color: #0071E3;
+    --accent-hover: #0077ED;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-header {
     --card-bg: rgba(29, 29, 31, 0.8);
     --card-hover: rgba(29, 29, 31, 0.9);
     --card-border: rgba(245, 245, 247, 0.1);
@@ -374,17 +385,19 @@ footer {
     font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    text-shadow: none;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
 }
 
 .subject-content p {
     font-size: clamp(1.2rem, 1.8vw + 0.5rem, 1.8rem);
-    color: var(--text-muted);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    line-height: 1.5;
+    color: var(--text-secondary);
+    text-shadow: none;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.016em;
 }
 
 /* Subject-specific Content Sections */
@@ -399,10 +412,10 @@ footer {
     font-size: clamp(2.5rem, 4vw + 1rem, 3.5rem);
     margin-bottom: 2rem;
     color: var(--text-primary);
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 /* Custom Scrollbar */
@@ -449,12 +462,12 @@ footer {
 .overview-card {
     background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 18px;
     text-align: center;
     transition: var(--transition-smooth);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .overview-card:hover {
@@ -474,6 +487,23 @@ footer {
     transform: scale(1.1);
 }
 
+.overview-card h3 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: 0.009em;
+    line-height: 1.16667;
+}
+
+.overview-card p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+}
+
 /* Resources Section */
 .resources-section {
     margin-bottom: 6rem;
@@ -489,11 +519,11 @@ footer {
 .resource-card {
     background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 18px;
     transition: var(--transition-smooth);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .resource-card:hover {
@@ -523,13 +553,16 @@ footer {
 }
 
 .resource-card ul li a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
     transition: var(--transition-smooth);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.1rem;
 }
 
 .resource-card ul li a:hover {
@@ -552,11 +585,11 @@ footer {
 .assignment-card {
     background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 18px;
     transition: var(--transition-smooth);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .assignment-card:hover {
@@ -574,8 +607,10 @@ footer {
 
 .due-date {
     color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
 }
 
 .assignment-actions {
@@ -585,35 +620,43 @@ footer {
 }
 
 .submit-btn, .view-btn {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 30px;
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    min-width: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     cursor: pointer;
     transition: var(--transition-smooth);
-    font-weight: 500;
-    font-size: 1rem;
 }
 
 .submit-btn {
     background: var(--primary-color);
     color: var(--text-primary);
+    border: none;
 }
 
 .submit-btn:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .view-btn {
-    background: transparent;
+    background: var(--button-bg);
     color: var(--text-primary);
-    border: 1px solid var(--card-border);
+    border: none;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .view-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
+    background: var(--button-hover);
+    transform: translateY(-1px);
 }
 
 /* Contact Section */
@@ -631,10 +674,10 @@ footer {
 .contact-info {
     background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 18px;
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .contact-form {
@@ -648,9 +691,12 @@ footer {
     padding: 1rem;
     border: 1px solid var(--card-border);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--button-bg);
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
     transition: var(--transition-smooth);
 }
 
@@ -658,7 +704,7 @@ footer {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--button-hover);
 }
 
 .contact-form textarea {
@@ -667,21 +713,27 @@ footer {
 }
 
 .contact-form button {
-    padding: 1rem;
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    min-width: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background: var(--primary-color);
     color: var(--text-primary);
     border: none;
-    border-radius: 30px;
     cursor: pointer;
     transition: var(--transition-smooth);
-    font-weight: 500;
-    font-size: 1rem;
 }
 
 .contact-form button:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 /* Responsive Styles */
@@ -707,11 +759,11 @@ footer {
     }
 
     .card-title {
-        font-size: 1.5rem;
+        font-size: 24px;
     }
 
     .card-description {
-        font-size: 1rem;
+        font-size: 17px;
     }
 
     .content-section h2 {

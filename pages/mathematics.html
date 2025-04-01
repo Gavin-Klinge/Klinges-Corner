@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinge's Corner - Mathematics in Life</title>
+    <title>Mathematics | Klinge's Corner</title>
+    <meta name="description" content="Explore comprehensive mathematics resources, including algebra, geometry, calculus, and more. Interactive lessons and practice problems available.">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/slider.css">
+    <link rel="stylesheet" href="subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .page-header {
             height: 40vh;
@@ -108,108 +112,205 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">Klinge's Corner</a>
-            </div>
-            <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="mathematics.html" class="active">Mathematics</a>
-                <a href="science.html">Science</a>
-                <a href="programming.html">Programming</a>
-            </div>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            Klinge's Corner
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/pages/mathematics.html" class="active">Mathematics</a>
+            <a href="/pages/science.html">Science</a>
+            <a href="/pages/programming.html">Programming</a>
+            <a href="/pages/parent-hub.html">Parent Hub</a>
+            <a href="/pages/classroom-hub.html">Classroom Hub</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn">Sign In</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <header class="subject-hero mathematics">
+        <div class="subject-content">
+            <h1>Mathematics</h1>
+            <p>Master mathematical concepts through interactive lessons, practice problems, and real-world applications.</p>
+        </div>
     </header>
 
     <main>
-        <section class="page-header" style="--header-bg: url('../images/headers/math-header.jpg')">
+        <section class="overview-section">
             <div class="page-content">
-                <h1 class="page-title" id="page-title">Mathematics in Life</h1>
-                <p class="page-description" id="page-description">Discover how mathematics shapes our everyday world and learn practical applications that make complex concepts accessible and engaging.</p>
+                <h2>Overview</h2>
+                <p>Our mathematics curriculum covers essential topics from basic arithmetic to advanced calculus, designed to build a strong foundation and develop problem-solving skills.</p>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <i class="fas fa-square-root-alt"></i>
+                        <h3>Algebra</h3>
+                        <p>Master algebraic concepts, equations, and functions through interactive lessons and practice problems.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-shapes"></i>
+                        <h3>Geometry</h3>
+                        <p>Explore geometric principles, shapes, and spatial relationships with visual aids and practical examples.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Calculus</h3>
+                        <p>Learn differential and integral calculus with step-by-step explanations and real-world applications.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="page-content">
-            <div class="content-grid">
-                <!-- Content cards will be dynamically loaded here -->
+        <section class="resources-section">
+            <div class="page-content">
+                <h2>Learning Resources</h2>
+                <p>Access a comprehensive collection of study materials, practice problems, and interactive tools.</p>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Textbooks</h3>
+                        <ul>
+                            <li><a href="#">Algebra Fundamentals</a></li>
+                            <li><a href="#">Geometry Essentials</a></li>
+                            <li><a href="#">Calculus Made Simple</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-video"></i>
+                        <h3>Video Lessons</h3>
+                        <ul>
+                            <li><a href="#">Step-by-Step Tutorials</a></li>
+                            <li><a href="#">Problem-Solving Strategies</a></li>
+                            <li><a href="#">Concept Explanations</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Interactive Tools</h3>
+                        <ul>
+                            <li><a href="#">Graphing Calculator</a></li>
+                            <li><a href="#">Equation Solver</a></li>
+                            <li><a href="#">Practice Problems</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="assignments-section">
+            <div class="page-content">
+                <h2>Current Assignments</h2>
+                <p>Stay on track with your learning journey through structured assignments and assessments.</p>
+                
+                <div class="assignments-grid">
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <h3>Algebra Basics</h3>
+                            <span class="due-date">Due: May 15, 2024</span>
+                        </div>
+                        <p>Complete the following exercises on linear equations and inequalities.</p>
+                        <div class="assignment-actions">
+                            <button class="submit-btn">
+                                Submit Assignment
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <button class="view-btn">
+                                View Details
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <h3>Geometry Fundamentals</h3>
+                            <span class="due-date">Due: May 20, 2024</span>
+                        </div>
+                        <p>Practice problems on triangles, circles, and polygons.</p>
+                        <div class="assignment-actions">
+                            <button class="submit-btn">
+                                Submit Assignment
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <button class="view-btn">
+                                View Details
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="page-content">
+                <h2>Need Help?</h2>
+                <p>Our team of experienced mathematics educators is here to support your learning journey.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> math@klingescorner.com</li>
+                            <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</li>
+                        </ul>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="../js/header.js"></script>
-    <script>
-        // Page-specific configuration
-        const pageConfig = {
-            title: 'Mathematics in Life',
-            description: 'Discover how mathematics shapes our everyday world and learn practical applications that make complex concepts accessible and engaging.',
-            headerImage: '../images/headers/math-header.jpg',
-            content: [
-                {
-                    title: 'Real-World Applications',
-                    description: 'Explore how mathematical concepts are used in everyday life, from budgeting to architecture.',
-                    image: '../images/content/math-applications.jpg',
-                    link: '/pages/mathematics/applications'
-                },
-                {
-                    title: 'Problem Solving',
-                    description: 'Develop critical thinking skills through mathematical problem-solving and logical reasoning.',
-                    image: '../images/content/problem-solving.jpg',
-                    link: '/pages/mathematics/problem-solving'
-                },
-                {
-                    title: 'Interactive Learning',
-                    description: 'Engage with interactive mathematical concepts and visualizations that make learning fun.',
-                    image: '../images/content/interactive-math.jpg',
-                    link: '/pages/mathematics/interactive'
-                },
-                {
-                    title: 'Financial Mathematics',
-                    description: 'Learn practical financial concepts and how mathematics helps in making informed decisions.',
-                    image: '../images/content/financial-math.jpg',
-                    link: '/pages/mathematics/financial'
-                },
-                {
-                    title: 'Statistics & Data',
-                    description: 'Understand how statistics and data analysis help us make sense of the world around us.',
-                    image: '../images/content/statistics.jpg',
-                    link: '/pages/mathematics/statistics'
-                },
-                {
-                    title: 'Geometry in Nature',
-                    description: 'Discover the mathematical patterns and geometric principles found in nature.',
-                    image: '../images/content/geometry-nature.jpg',
-                    link: '/pages/mathematics/geometry'
-                }
-            ]
-        };
-
-        // Update page content
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update title and description
-            document.title = `Klinge's Corner - ${pageConfig.title}`;
-            document.getElementById('page-title').textContent = pageConfig.title;
-            document.getElementById('page-description').textContent = pageConfig.description;
-
-            // Update header background
-            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
-
-            // Create content cards
-            const contentGrid = document.querySelector('.content-grid');
-            contentGrid.innerHTML = pageConfig.content.map(item => `
-                <div class="content-card">
-                    <img src="${item.image}" alt="${item.title}" class="card-image">
-                    <div class="card-content">
-                        <h2 class="card-title">${item.title}</h2>
-                        <p class="card-description">${item.description}</p>
-                        <a href="${item.link}" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to providing high-quality educational resources for students, parents, and educators.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-            `).join('');
-        });
-    </script>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/pages/mathematics.html">Mathematics</a></li>
+                    <li><a href="/pages/science.html">Science</a></li>
+                    <li><a href="/pages/programming.html">Programming</a></li>
+                    <li><a href="/pages/parent-hub.html">Parent Hub</a></li>
+                    <li><a href="/pages/classroom-hub.html">Classroom Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/pages/professional-development.html">Professional Development</a></li>
+                    <li><a href="/pages/life-skills.html">Life Skills</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html> 
