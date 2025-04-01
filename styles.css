@@ -40,7 +40,6 @@ body {
     right: 0;
     z-index: 1000;
     padding: 1rem 4%;
-    transition: all 0.5s ease;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -63,7 +62,6 @@ body {
     -webkit-mask-size: 200% 200%;
     z-index: -1;
     transform-origin: top;
-    transition: all 0.5s ease;
 }
 
 /* Cloud effect overlay */
@@ -80,7 +78,6 @@ body {
     -webkit-mask-size: 150% 150%;
     z-index: -2;
     transform-origin: top;
-    transition: all 0.5s ease;
 }
 
 /* Additional cloud layers */
@@ -95,7 +92,6 @@ body {
     transform: scaleX(1.3);
     z-index: -3;
     filter: blur(15px);
-    transition: all 0.5s ease;
 }
 
 .navbar > div:first-child::after {
@@ -109,34 +105,13 @@ body {
     transform: scaleX(1.4);
     z-index: -4;
     filter: blur(20px);
-    transition: all 0.5s ease;
 }
 
-/* Hover and scroll effects */
-.navbar:hover::before,
+/* Scrolled state */
 .navbar.scrolled::before {
-    mask-position: 50% center;
-    -webkit-mask-position: 50% center;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}
-
-.navbar:hover::after,
-.navbar.scrolled::after {
-    mask-position: 50% center;
-    -webkit-mask-position: 50% center;
-    transform: scaleY(0.98);
-}
-
-.navbar:hover > div:first-child::before,
-.navbar.scrolled > div:first-child::before {
-    transform: scaleX(1.4);
-}
-
-.navbar:hover > div:first-child::after,
-.navbar.scrolled > div:first-child::after {
-    transform: scaleX(1.5);
 }
 
 /* Cloud animations */
@@ -469,9 +444,6 @@ main {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        animation: waveEffect 25s infinite linear;
     }
 
     .mobile-menu-btn {
