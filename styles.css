@@ -45,43 +45,21 @@ body {
     align-items: center;
     gap: 3rem;
     height: 80px;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-/* Cloud effect - single layer */
-.navbar::after {
-    content: '';
-    position: absolute;
-    left: -20px;
-    right: -20px;
-    top: 100%;
-    height: 60px;
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.02) 0%,
-        rgba(255, 255, 255, 0.01) 30%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 0 0 100% 100%;
-    filter: blur(10px);
-    z-index: -1;
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Scrolled state */
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(20, 20, 20, 0.6);
 }
 
 /* Ensure content below navbar is properly positioned */
 main {
     position: relative;
     z-index: 1;
-    padding-top: calc(120px + 1rem);
+    padding-top: calc(80px + 1rem);
 }
 
 .logo {
