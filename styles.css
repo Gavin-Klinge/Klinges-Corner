@@ -48,25 +48,49 @@ body {
     background: rgba(20, 20, 20, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Cloud effect base */
+/* First layer - widest, lightest blur */
 .navbar::before {
     content: '';
     position: absolute;
-    left: -15%;
-    right: -15%;
+    left: -20%;
+    right: -20%;
+    bottom: -50px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 80% 80% 35% 35% / 0 0 100% 100%;
+    filter: blur(10px);
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Second layer - medium width, medium blur */
+.navbar::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
     bottom: -40px;
     height: 80px;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 70% 70% 30% 30% / 0 0 100% 100%;
+    border-radius: 70% 70% 40% 40% / 0 0 100% 100%;
     filter: blur(8px);
-    z-index: -1;
+    z-index: -2;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Cloud effect overlay */
+/* Third layer - narrowest, sharpest blur */
+.navbar::before,
+.navbar::after {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
 .navbar::after {
     content: '';
     position: absolute;
@@ -77,24 +101,27 @@ body {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-radius: 60% 60% 40% 40% / 0 0 100% 100%;
+    border-radius: 60% 60% 45% 45% / 0 0 100% 100%;
     filter: blur(5px);
-    z-index: -2;
+    z-index: -3;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Scrolled state */
+/* Scrolled state with enhanced layers */
 .navbar.scrolled {
-    background: rgba(20, 20, 20, 0.6);
+    background: rgba(20, 20, 20, 0.65);
 }
 
 .navbar.scrolled::before {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 60% 60% 40% 40% / 0 0 100% 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 70% 70% 30% 30% / 0 0 100% 100%;
+    filter: blur(12px);
 }
 
 .navbar.scrolled::after {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 50% 50% 30% 30% / 0 0 100% 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 60% 60% 35% 35% / 0 0 100% 100%;
+    filter: blur(6px);
 }
 
 /* Remove the cloud effect from under the logo */
