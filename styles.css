@@ -45,18 +45,23 @@ body {
     align-items: center;
     gap: 3rem;
     height: 80px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 /* Cloud effect base layer */
 .navbar::before {
     content: '';
     position: absolute;
-    inset: -40px -20px -60px;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 100px;
     background: linear-gradient(to bottom, 
         rgba(255, 255, 255, 0.03) 0%,
         rgba(255, 255, 255, 0.02) 50%,
-        rgba(255, 255, 255, 0.01) 100%
+        rgba(255, 255, 255, 0) 100%
     );
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -68,7 +73,10 @@ body {
 .navbar::after {
     content: '';
     position: absolute;
-    inset: -30px -15px -40px;
+    left: 0;
+    right: 0;
+    top: 95%;
+    height: 80px;
     background: linear-gradient(to bottom, 
         rgba(255, 255, 255, 0.02) 0%,
         rgba(255, 255, 255, 0.01) 50%,
@@ -84,7 +92,10 @@ body {
 .navbar > div:first-child::before {
     content: '';
     position: absolute;
-    inset: -20px -30px -80px;
+    left: -30px;
+    right: -30px;
+    top: 90%;
+    height: 120px;
     background: linear-gradient(to bottom, 
         rgba(255, 255, 255, 0.01) 0%,
         rgba(255, 255, 255, 0) 100%
@@ -99,7 +110,10 @@ body {
 .navbar > div:first-child::after {
     content: '';
     position: absolute;
-    inset: -10px -40px -90px;
+    left: -40px;
+    right: -40px;
+    top: 85%;
+    height: 140px;
     background: linear-gradient(to bottom, 
         rgba(255, 255, 255, 0.01) 0%,
         rgba(255, 255, 255, 0) 100%
@@ -112,12 +126,8 @@ body {
 }
 
 /* Scrolled state */
-.navbar.scrolled::before {
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.04) 0%,
-        rgba(255, 255, 255, 0.03) 50%,
-        rgba(255, 255, 255, 0.02) 100%
-    );
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
