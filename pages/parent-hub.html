@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Hub - Mr. Klinge's Corner</title>
+    <title>Parent Hub - Klinge's Corner</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="subject.css">
+    <link rel="stylesheet" href="../subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .page-header {
@@ -110,19 +110,35 @@
 </head>
 <body>
     <header>
-        <!-- Header will be dynamically loaded -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">Klinge's Corner</a>
+            </div>
+            <div class="nav-links">
+                <a href="classroom-hub.html">Classroom Hub</a>
+                <a href="professional-development.html">Professional Development</a>
+                <a href="life-skills.html">Life Skills</a>
+                <a href="parent-hub.html" class="active">Parent Hub</a>
+            </div>
+            <button class="login-btn">Login</button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
         <section class="page-header">
-            <div class="page-content">
-                <h1 class="page-title">Parent Hub</h1>
-                <p class="page-description">Resources and guidance to support your child's learning journey and development.</p>
+            <div class="header-content">
+                <h1 id="page-title">Parent Hub</h1>
+                <p id="page-description">Resources and guidance to support your child's learning journey and development.</p>
             </div>
         </section>
 
-        <section class="content-grid">
-            <!-- Content cards will be dynamically loaded -->
+        <section class="page-content">
+            <div class="content-grid">
+                <!-- Content cards will be dynamically loaded here -->
+            </div>
         </section>
     </main>
 
@@ -133,6 +149,57 @@
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/content-data.js"></script>
-    <script src="../js/page-content.js"></script>
+    <script>
+        // Page-specific configuration
+        const pageConfig = {
+            title: 'Parent Hub',
+            description: 'Resources and guidance to support your child\'s learning journey and development.',
+            headerImage: '../images/headers/parent-hub.jpg',
+            content: [
+                {
+                    title: 'Supporting Learning',
+                    description: 'Learn how to effectively support your child\'s learning at home and in school.',
+                    image: '../images/content/supporting-learning.jpg',
+                    link: '/pages/supporting-learning'
+                },
+                {
+                    title: 'Digital Safety',
+                    description: 'Understand how to keep your child safe in the digital world and promote responsible technology use.',
+                    image: '../images/content/digital-safety.jpg',
+                    link: '/pages/digital-safety'
+                },
+                {
+                    title: 'Parent-Teacher Communication',
+                    description: 'Tips and strategies for effective communication with teachers and school staff.',
+                    image: '../images/content/parent-teacher-communication.jpg',
+                    link: '/pages/parent-teacher-communication'
+                }
+            ]
+        };
+
+        // Update page content
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update title and description
+            document.title = `Klinge's Corner - ${pageConfig.title}`;
+            document.getElementById('page-title').textContent = pageConfig.title;
+            document.getElementById('page-description').textContent = pageConfig.description;
+
+            // Update header background
+            document.querySelector('.page-header').style.setProperty('--header-bg', `url('${pageConfig.headerImage}')`);
+
+            // Create content cards
+            const contentGrid = document.querySelector('.content-grid');
+            contentGrid.innerHTML = pageConfig.content.map(item => `
+                <div class="content-card">
+                    <img src="${item.image}" alt="${item.title}" class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">${item.title}</h2>
+                        <p class="card-description">${item.description}</p>
+                        <a href="${item.link}" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
 </body>
 </html> 
