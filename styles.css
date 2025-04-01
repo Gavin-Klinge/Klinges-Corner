@@ -727,7 +727,7 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: 0;
 }
 
@@ -740,9 +740,9 @@ footer {
     bottom: 0;
     background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.6) 40%,
-        rgba(0, 0, 0, 0.8) 100%
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.6) 100%
     );
     z-index: 1;
 }
@@ -757,10 +757,10 @@ footer {
     animation: fadeInUp 0.8s ease forwards;
     padding: 2rem;
     border-radius: 1rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero-content h1 {
