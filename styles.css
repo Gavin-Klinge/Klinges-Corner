@@ -45,44 +45,73 @@ body {
     align-items: center;
     gap: 3rem;
     height: 80px;
-    background: rgba(20, 20, 20, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Cloud effect */
+/* Cloud effect base */
+.navbar::before {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -20px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 50% 50% 50% 50% / 0 0 100% 100%;
+    z-index: -1;
+}
+
+/* Cloud effect overlay */
 .navbar::after {
     content: '';
     position: absolute;
-    left: -20px;
-    right: -20px;
-    bottom: -50px;
-    height: 50px;
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.08) 0%,
-        rgba(255, 255, 255, 0.05) 30%,
-        rgba(255, 255, 255, 0.02) 60%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    left: -5%;
+    right: -5%;
+    bottom: -30px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 40% 40% 60% 60% / 0 0 100% 100%;
+    filter: blur(5px);
+    z-index: -2;
+}
+
+/* Additional cloud layer */
+.navbar > div:first-child::before {
+    content: '';
+    position: absolute;
+    left: -15%;
+    right: -15%;
+    bottom: -40px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 0 0 60% 60% / 0 0 100% 100%;
+    border-radius: 60% 60% 40% 40% / 0 0 100% 100%;
     filter: blur(8px);
-    z-index: -1;
+    z-index: -3;
 }
 
 /* Scrolled state */
 .navbar.scrolled {
-    background: rgba(20, 20, 20, 0.7);
+    background: rgba(20, 20, 20, 0.6);
+}
+
+.navbar.scrolled::before {
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .navbar.scrolled::after {
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.06) 30%,
-        rgba(255, 255, 255, 0.03) 60%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.navbar.scrolled > div:first-child::before {
+    background: rgba(255, 255, 255, 0.03);
 }
 
 /* Ensure content below navbar is properly positioned */
