@@ -723,7 +723,10 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/headers/classroom-hub.jpg') center/cover no-repeat fixed;
+    background-image: url('images/headers/classroom-hub.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     opacity: 0.4;
     z-index: 0;
 }
