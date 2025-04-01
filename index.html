@@ -3,127 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klinge's Corner - Where Education Meets Innovation. Explore STEM subjects, mathematics, science, and programming in an engaging and interactive way.">
-    <title>Klinge's Corner - Education Meets Innovation</title>
+    <title>Klinge's Corner - Educational Resources</title>
+    <meta name="description" content="Access high-quality educational resources, interactive lessons, and learning tools for students, parents, and educators.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header will be dynamically inserted here -->
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            Klinge's Corner
+        </a>
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="/pages/mathematics.html">Mathematics</a>
+            <a href="/pages/science.html">Science</a>
+            <a href="/pages/programming.html">Programming</a>
+            <a href="/pages/parent-hub.html">Parent Hub</a>
+            <a href="/pages/classroom-hub.html">Classroom Hub</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn">Sign In</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Empowering Education</h1>
+            <p>Discover a world of learning opportunities designed to inspire and challenge students of all ages.</p>
+            <div class="hero-buttons">
+                <a href="#featured" class="cta-button">
+                    Explore Resources
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="/pages/contact.html" class="secondary-button">
+                    Get Started
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
     <main>
-        <section class="featured-hero">
-            <div class="featured-content">
-                <h1 class="featured-title">What is STEM?</h1>
-                <p class="featured-description">"Companies today seek graduates who don't just know facts, but who can solve problems, think critically, and innovate. STEM skills can bridge this gap, turning learners into leaders, if you are willing to take a leap of faith"</p>
-                <div class="featured-buttons">
-                    <button class="play-btn" aria-label="Start Learning">
-                        <i class="fas fa-play"></i> Take the dive!
-                    </button>
-                    <button class="more-info-btn" aria-label="Learn More">
-                        <i class="fas fa-info-circle"></i> More Info
-                    </button>
+        <section id="featured" class="featured-section">
+            <div class="section-content">
+                <h2>Featured Resources</h2>
+                <p>Explore our most popular educational materials and interactive learning tools.</p>
+                
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/math.jpg" alt="Mathematics Resources">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mathematics</h3>
+                            <p>Master mathematical concepts through interactive lessons and practice problems.</p>
+                            <a href="/pages/mathematics.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/science.jpg" alt="Science Resources">
+                        </div>
+                        <div class="card-content">
+                            <h3>Science</h3>
+                            <p>Explore scientific concepts with hands-on experiments and virtual labs.</p>
+                            <a href="/pages/science.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/programming.jpg" alt="Programming Resources">
+                        </div>
+                        <div class="card-content">
+                            <h3>Programming</h3>
+                            <p>Learn coding skills with interactive tutorials and real-world projects.</p>
+                            <a href="/pages/programming.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="in-todays-world" class="content-section">
-            <h2>In Today's World</h2>
-            <p class="section-description">Explore how STEM concepts shape our modern world and influence everyday life.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Content slider">
-                    <!-- Content items will be dynamically loaded here -->
+        <section class="features-section">
+            <div class="section-content">
+                <h2>Why Choose Klinge's Corner?</h2>
+                <p>Experience education differently with our innovative approach to learning.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Interactive Learning</h3>
+                        <p>Engage with dynamic content and real-time feedback systems.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Support</h3>
+                        <p>Connect with peers and educators in our vibrant learning community.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your learning journey with detailed analytics and insights.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Access</h3>
+                        <p>Learn anywhere, anytime with our responsive platform.</p>
+                    </div>
                 </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </section>
 
-        <section id="mathematics-in-life" class="content-section">
-            <h2>Mathematics in Life</h2>
-            <p class="section-description">Discover how mathematics influences our daily decisions and shapes the world around us.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Mathematics content slider">
-                    <!-- Content items will be dynamically loaded here -->
+        <section class="cta-section">
+            <div class="section-content">
+                <h2>Ready to Start Learning?</h2>
+                <p>Join thousands of students who are already experiencing the future of education.</p>
+                <div class="cta-buttons">
+                    <a href="/pages/register.html" class="cta-button">
+                        Create Account
+                        <i class="fas fa-user-plus"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="secondary-button">
+                        Contact Us
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
-        <section id="everyday-science" class="content-section">
-            <h2>Everyday Science</h2>
-            <p class="section-description">Uncover the scientific principles that govern our daily experiences and natural phenomena.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Science content slider">
-                    <!-- Content items will be dynamically loaded here -->
-                </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
-        <section id="programming-essentials" class="content-section">
-            <h2>Programming Essentials</h2>
-            <p class="section-description">Learn the fundamentals of programming and how it powers our digital world.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Programming content slider">
-                    <!-- Content items will be dynamically loaded here -->
-                </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Trending Now</h2>
-            <p class="section-description">Stay updated with the latest trends and developments in STEM education.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Trending content slider">
-                    <!-- Content items will be dynamically loaded here -->
-                </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Popular on Klinges Corner</h2>
-            <p class="section-description">Explore our most engaging and popular educational content.</p>
-            <div class="content-row">
-                <div class="content-slider" role="region" aria-label="Popular content slider">
-                    <!-- Content items will be dynamically loaded here -->
-                </div>
-                <button class="slider-arrow prev" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow next" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </section>
     </main>
@@ -132,28 +152,30 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About Us</h3>
-                <p>Klinge's Corner is dedicated to making STEM education accessible, engaging, and inspiring for everyone.</p>
+                <p>Klinge's Corner is dedicated to providing high-quality educational resources for students, parents, and educators.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> About</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="/pages/mathematics.html">Mathematics</a></li>
+                    <li><a href="/pages/science.html">Science</a></li>
+                    <li><a href="/pages/programming.html">Programming</a></li>
+                    <li><a href="/pages/parent-hub.html">Parent Hub</a></li>
+                    <li><a href="/pages/classroom-hub.html">Classroom Hub</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Study Materials</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Practice Tests</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="/pages/professional-development.html">Professional Development</a></li>
+                    <li><a href="/pages/life-skills.html">Life Skills</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -162,10 +184,6 @@
         </div>
     </footer>
 
-    <script src="js/header.js"></script>
-    <script src="js/header-data.js"></script>
-    <script src="js/content-data.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
