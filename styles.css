@@ -56,23 +56,64 @@ body {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: none;
-    border-radius: 0;
-    transform: none;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: scaleX(1.1);
     z-index: -1;
 }
 
-/* Remove additional layers that were creating the dark effect */
-.navbar::after,
-.navbar > div:first-child::before,
+.navbar::after {
+    content: '';
+    position: absolute;
+    inset: 20px -20px -70px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0 0 120% 120% / 0 0 100% 100%;
+    transform: scaleX(1.2);
+    z-index: -2;
+    filter: blur(10px);
+}
+
+/* Cloud layers */
+.navbar > div:first-child::before {
+    content: '';
+    position: absolute;
+    inset: 40px -30px -80px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 0 0 150% 150% / 0 0 100% 100%;
+    transform: scaleX(1.3);
+    z-index: -3;
+    filter: blur(15px);
+}
+
 .navbar > div:first-child::after {
-    display: none;
+    content: '';
+    position: absolute;
+    inset: 60px -40px -90px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 0 0 180% 180% / 0 0 100% 100%;
+    transform: scaleX(1.4);
+    z-index: -4;
+    filter: blur(20px);
 }
 
 .navbar.scrolled::before {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border-radius: 0 0 30% 30% / 0 0 100% 100%;
+    transform: scaleX(1.05);
+}
+
+/* Remove the display: none for the layers */
+.navbar::after,
+.navbar > div:first-child::before,
+.navbar > div:first-child::after {
+    display: block;
 }
 
 /* Ensure content below navbar is properly positioned */
