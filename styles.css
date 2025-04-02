@@ -705,13 +705,12 @@ footer {
 
 /* Hero Section */
 .hero-section {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem;
-    position: relative;
+    padding: 6rem 4%;
     overflow: hidden;
     background-color: var(--background-dark);
 }
@@ -727,8 +726,9 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 0;
+    filter: brightness(0.8) contrast(1.1);
 }
 
 .hero-section::after {
@@ -740,49 +740,45 @@ footer {
     bottom: 0;
     background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0.4) 40%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.7) 100%
     );
     z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
     z-index: 2;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
+    max-width: 800px;
+    text-align: center;
     padding: 2rem;
     border-radius: 1rem;
     background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .hero-content h1 {
-    font-size: clamp(3.5rem, 5vw + 1rem, 5.5rem);
+    font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(120deg, #fff 0%, #f0f0f0 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff0000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
 .hero-content p {
-    font-size: clamp(1.25rem, 1.8vw + 0.5rem, 2rem);
+    font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.5rem);
+    line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
