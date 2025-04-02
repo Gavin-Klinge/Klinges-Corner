@@ -5,8 +5,8 @@
     --card-border: rgba(255, 255, 255, 0.1);
     --text-primary: #F5F5F7;
     --text-secondary: rgba(245, 245, 247, 0.8);
-    --accent-color: #0071E3;
-    --accent-hover: #0077ED;
+    --accent-color: #E31E24;
+    --accent-hover: #FF2329;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -122,7 +122,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    color: var(--primary-color);
+    color: #E31E24;
     text-decoration: none;
     font-weight: 400;
     font-size: 17px;
@@ -133,7 +133,7 @@
 }
 
 .card-link:hover {
-    color: var(--primary-hover);
+    color: #FF2329;
     transform: translateX(5px);
 }
 
@@ -178,7 +178,7 @@
 
 .feature-card i {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: #E31E24;
     margin-bottom: 1.5rem;
     transition: var(--transition-smooth);
 }
@@ -429,13 +429,13 @@ footer {
 }
 
 .content-slider::-webkit-scrollbar-thumb {
-    background: rgba(229, 9, 20, 0.5);
-    border-radius: 5px;
-    transition: var(--transition-smooth);
+    background: rgba(227, 30, 36, 0.4);
+    border-radius: 4px;
+    transition: var(--transition);
 }
 
 .content-slider::-webkit-scrollbar-thumb:hover {
-    background: rgba(229, 9, 20, 0.7);
+    background: rgba(227, 30, 36, 0.6);
 }
 
 /* Hover Effects */
@@ -636,26 +636,26 @@ footer {
 }
 
 .submit-btn {
-    background: var(--primary-color);
+    background-color: #E31E24;
     color: var(--text-primary);
     border: none;
 }
 
 .submit-btn:hover {
-    background: var(--primary-hover);
+    background-color: #FF2329;
     transform: translateY(-1px);
 }
 
 .view-btn {
-    background: var(--button-bg);
-    color: var(--text-primary);
-    border: none;
+    border: 2px solid #E31E24;
+    color: #E31E24;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
 
 .view-btn:hover {
-    background: var(--button-hover);
+    background-color: #E31E24;
+    color: var(--text-primary);
     transform: translateY(-1px);
 }
 
@@ -713,27 +713,21 @@ footer {
 }
 
 .contact-form button {
-    padding: 12px 22px;
-    border-radius: 980px;
-    font-size: 17px;
-    line-height: 1.17648;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    min-width: 30px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: var(--primary-color);
+    background-color: #E31E24;
     color: var(--text-primary);
     border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
     transition: var(--transition-smooth);
+    width: 100%;
 }
 
 .contact-form button:hover {
-    background: var(--primary-hover);
-    transform: translateY(-1px);
+    background-color: #FF2329;
+    transform: translateY(-2px);
 }
 
 /* Responsive Styles */

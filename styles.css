@@ -6,9 +6,9 @@
 }
 
 :root {
-    /* Apple's Color System */
-    --primary-color: #0071E3;
-    --primary-hover: #0077ED;
+    /* Color System - Updated to Red Tones */
+    --primary-color: #E31E24;
+    --primary-hover: #FF2329;
     --background-dark: #000000;
     --background-light: #1D1D1F;
     --text-primary: #F5F5F7;
@@ -22,9 +22,9 @@
     --button-bg: rgba(255, 255, 255, 0.1);
     --button-hover: rgba(255, 255, 255, 0.15);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 2px 8px rgba(227, 30, 36, 0.2);
+    --shadow-md: 0 4px 16px rgba(227, 30, 36, 0.3);
+    --shadow-lg: 0 8px 32px rgba(227, 30, 36, 0.4);
 }
 
 body {
@@ -100,7 +100,7 @@ body {
 }
 
 .logo i {
-    color: var(--primary-color);
+    color: #E31E24;
     font-size: 1.75rem;
 }
 
@@ -127,7 +127,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: #E31E24;
     transition: var(--transition);
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .login-btn {
-    background: var(--primary-color);
+    background: #E31E24;
     color: white;
     border: none;
     padding: 0.5rem 1.5rem;
@@ -159,7 +159,7 @@ body {
 }
 
 .login-btn:hover {
-    background: var(--primary-hover);
+    background: #FF2329;
     transform: translateY(-1px);
 }
 
@@ -175,7 +175,7 @@ body {
 }
 
 .mobile-menu-btn:hover {
-    color: var(--primary-color);
+    color: #E31E24;
 }
 
 /* Typography */
@@ -222,13 +222,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .play-btn {
-    background-color: var(--primary-color);
+    background-color: #E31E24;
     color: var(--text-primary);
     border: none;
 }
 
 .play-btn:hover {
-    background-color: var(--primary-hover);
+    background-color: #FF2329;
     transform: translateY(-1px);
 }
 
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: #E31E24;
     text-decoration: none;
     font-size: 17px;
     line-height: 1.17648;
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-item-link:hover {
-    color: var(--primary-hover);
+    color: #FF2329;
     transform: translateX(5px);
 }
 
@@ -391,11 +391,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-item-badge.popular {
-    background-color: #2196F3;
+    background-color: #E31E24;
 }
 
 .content-item-badge.featured {
-    background-color: #FF9800;
+    background-color: #FF2329;
 }
 
 /* Slider Navigation */
@@ -605,13 +605,13 @@ html {
 }
 
 .play-btn {
-    background-color: var(--primary-color);
+    background-color: #E31E24;
     color: var(--text-primary);
     border: none;
 }
 
 .play-btn:hover {
-    background-color: var(--primary-hover);
+    background-color: #FF2329;
     transform: translateY(-1px);
 }
 
@@ -722,13 +722,10 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-position: center;
+    background: url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3") no-repeat center center;
     background-size: cover;
-    background-repeat: no-repeat;
     opacity: 0.9;
     z-index: 0;
-    filter: brightness(0.8) contrast(1.1);
 }
 
 .hero-section::after {
@@ -869,7 +866,7 @@ footer {
 }
 
 .card-link {
-    color: var(--primary-color);
+    color: #E31E24;
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
@@ -879,7 +876,7 @@ footer {
 }
 
 .card-link:hover {
-    color: var(--primary-hover);
+    color: #FF2329;
 }
 
 /* Features Section */
@@ -910,7 +907,7 @@ footer {
 
 .feature-item i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: #E31E24;
     margin-bottom: 1.5rem;
 }
 
