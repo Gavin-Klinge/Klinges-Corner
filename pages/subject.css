@@ -834,4 +834,197 @@ footer {
     .card-image {
         height: 200px;
     }
+}
+
+/* Netflix-style Game Tiles */
+.netflix-row {
+    position: relative;
+    width: 100%;
+    padding: 0 4%;
+}
+
+.netflix-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.netflix-tile {
+    position: relative;
+    min-width: 300px;
+    height: 169px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.netflix-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tile-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 60%,
+        transparent 100%);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.netflix-tile:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+}
+
+.netflix-tile:hover img {
+    transform: scale(1.1);
+}
+
+.netflix-tile:hover .tile-overlay {
+    transform: translateY(0);
+}
+
+.tile-overlay h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.tile-overlay p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.play-now-btn {
+    background: #E31E24;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-now-btn:hover {
+    background: #FF2329;
+}
+
+.game-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.game-badge.popular {
+    background: #E31E24;
+    color: white;
+}
+
+.game-badge.featured {
+    background: #FF2329;
+    color: white;
+}
+
+.game-badge.new {
+    background: #44D62C;
+    color: white;
+}
+
+.game-badge.trending {
+    background: #FFD700;
+    color: black;
+}
+
+/* Games Hero Section */
+.subject-hero.games {
+    --header-bg: url('../images/headers/games-header.jpg');
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.6)),
+        var(--header-bg) center/cover;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.subject-hero.games .subject-content {
+    max-width: 800px;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Custom Scrollbar for Netflix Slider */
+.netflix-slider::-webkit-scrollbar {
+    height: 4px;
+}
+
+.netflix-slider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.netflix-slider::-webkit-scrollbar-thumb {
+    background: rgba(227, 30, 36, 0.6);
+    border-radius: 4px;
+}
+
+.netflix-slider::-webkit-scrollbar-thumb:hover {
+    background: rgba(227, 30, 36, 0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .netflix-tile {
+        min-width: 250px;
+        height: 141px;
+    }
+
+    .tile-overlay h3 {
+        font-size: 1rem;
+    }
+
+    .tile-overlay p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .play-now-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .netflix-tile {
+        min-width: 200px;
+        height: 113px;
+    }
 } 
