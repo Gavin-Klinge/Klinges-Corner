@@ -542,8 +542,8 @@ html {
 
 /* Featured Hero Section */
 .featured-hero {
-    min-height: 100vh;
-    padding-top: 80px;
+    min-height: 80vh;
+    padding-top: 60px;
     background: linear-gradient(to top, 
         rgba(0, 0, 0, 0.95) 0%, 
         rgba(0, 0, 0, 0.4) 60%, 
@@ -706,11 +706,11 @@ footer {
 /* Hero Section */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 4%;
+    padding: 4rem 4%;
     overflow: hidden;
     background-color: var(--background-dark);
 }
@@ -749,7 +749,7 @@ footer {
     z-index: 2;
     max-width: 800px;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
