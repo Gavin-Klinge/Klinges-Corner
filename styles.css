@@ -548,7 +548,7 @@ html {
         rgba(0, 0, 0, 0.95) 0%, 
         rgba(0, 0, 0, 0.4) 60%, 
         rgba(0, 0, 0, 0.4) 100%),
-        url('images/headers/featured-header.jpg') center/cover;
+        url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3") center/cover;
     display: flex;
     align-items: center;
     padding-left: 4%;
@@ -722,7 +722,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3") no-repeat center center;
+    background: url('images/headers/featured-header.jpg') center/cover;
     background-size: cover;
     opacity: 0.9;
     z-index: 0;
