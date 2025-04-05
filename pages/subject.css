@@ -1,11 +1,352 @@
 /* Subject Page Styles */
 :root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-text: #666;
+    --background-color: #f5f6fa;
+    --card-background: #fff;
+    --border-color: #e1e1e1;
+    --hover-color: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Search and Filter Section */
+.search-filter-section {
+    padding: 2rem;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text);
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.game-filter {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    background: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.game-filter:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.game-filter.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Netflix-style Slider */
+.netflix-row {
+    padding: 2rem;
+    position: relative;
+}
+
+.netflix-row h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.netflix-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.netflix-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.netflix-tile {
+    flex: 0 0 300px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--card-background);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
+}
+
+.netflix-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+.netflix-tile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.netflix-tile:hover img {
+    transform: scale(1.05);
+}
+
+.tile-content {
+    padding: 1rem;
+}
+
+.tile-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.tile-content p {
+    margin: 0 0 1rem;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.play-now-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.play-now-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Loading State */
+.netflix-tile.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Slider Navigation */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all var(--transition-speed);
+    z-index: 1;
+}
+
+.slider-nav:hover {
+    background-color: white;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.slider-prev {
+    left: 1rem;
+}
+
+.slider-next {
+    right: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .netflix-tile {
+        flex: 0 0 250px;
+    }
+    
+    .netflix-tile img {
+        height: 150px;
+    }
+    
+    .slider-nav {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .search-filter-section {
+        padding: 1rem;
+    }
+    
+    .netflix-row {
+        padding: 1rem;
+    }
+    
+    .netflix-tile {
+        flex: 0 0 200px;
+    }
+    
+    .netflix-tile img {
+        height: 120px;
+    }
+    
+    .tile-content h3 {
+        font-size: 1rem;
+    }
+    
+    .tile-content p {
+        font-size: 0.8rem;
+    }
+    
+    .play-now-btn {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Subject Page Styles */
+:root {
     --card-bg: rgba(255, 255, 255, 0.05);
     --card-hover: rgba(255, 255, 255, 0.08);
     --card-border: rgba(255, 255, 255, 0.1);
     --text-primary: #F5F5F7;
     --text-secondary: rgba(245, 245, 247, 0.8);
-    --accent-color: #E31E24;
     --accent-hover: #FF2329;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -836,36 +1177,48 @@ footer {
     }
 }
 
-/* Netflix-style Game Tiles */
+/* Netflix-style Slider */
 .netflix-row {
+    padding: 2rem 4%;
     position: relative;
-    width: 100%;
-    padding: 0 4%;
+}
+
+.netflix-row h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .netflix-slider {
     display: flex;
-    gap: 1rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 1rem 0;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.netflix-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .netflix-tile {
-    position: relative;
-    min-width: 300px;
-    height: 169px;
-    border-radius: 4px;
+    flex: 0 0 300px;
+    height: 169px; /* 16:9 aspect ratio */
+    border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .netflix-tile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .tile-overlay {
@@ -873,19 +1226,17 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.7) 60%,
-        transparent 100%);
-    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+    padding: 1.5rem 1rem 1rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    z-index: 2;
 }
 
 .netflix-tile:hover {
     transform: scale(1.05);
-    z-index: 2;
-    box-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 .netflix-tile:hover img {
@@ -897,134 +1248,286 @@ footer {
 }
 
 .tile-overlay h3 {
-    color: var(--text-primary);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .tile-overlay p {
-    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .play-now-btn {
-    background: #E31E24;
+    background-color: var(--accent-color);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
     border-radius: 4px;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 .play-now-btn:hover {
-    background: #FF2329;
+    background-color: var(--accent-hover);
 }
 
 .game-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.25rem 0.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
+    z-index: 3;
 }
 
 .game-badge.popular {
-    background: #E31E24;
+    background-color: #E31E24;
     color: white;
 }
 
 .game-badge.featured {
-    background: #FF2329;
-    color: white;
+    background-color: #FFD700;
+    color: #000;
 }
 
 .game-badge.new {
-    background: #44D62C;
+    background-color: #4CAF50;
     color: white;
 }
 
 .game-badge.trending {
-    background: #FFD700;
-    color: black;
+    background-color: #2196F3;
+    color: white;
 }
 
-/* Games Hero Section */
+/* Subject Hero for Games */
 .subject-hero.games {
-    --header-bg: url('../images/headers/games-header.jpg');
-    position: relative;
-    height: 60vh;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.6)),
+        url('../images/headers/games-header.jpg') center/cover;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-primary);
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.6)),
-        var(--header-bg) center/cover;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-hero.games::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
 }
 
 .subject-hero.games .subject-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
-    animation: fadeInUp 0.8s ease forwards;
+    padding: 0 2rem;
 }
 
-/* Custom Scrollbar for Netflix Slider */
-.netflix-slider::-webkit-scrollbar {
-    height: 4px;
+/* Slider Navigation Buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.2s ease;
 }
 
-.netflix-slider::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+.slider-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.netflix-slider::-webkit-scrollbar-thumb {
-    background: rgba(227, 30, 36, 0.6);
-    border-radius: 4px;
+.slider-prev {
+    left: 1rem;
 }
 
-.netflix-slider::-webkit-scrollbar-thumb:hover {
-    background: rgba(227, 30, 36, 0.8);
+.slider-next {
+    right: 1rem;
 }
 
-/* Responsive Adjustments */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .netflix-tile {
-        min-width: 250px;
+        flex: 0 0 250px;
         height: 141px;
     }
-
+    
     .tile-overlay h3 {
         font-size: 1rem;
     }
-
+    
     .tile-overlay p {
         font-size: 0.8rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
-
+    
     .play-now-btn {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
+    }
+    
+    .slider-nav {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (max-width: 480px) {
     .netflix-tile {
-        min-width: 200px;
+        flex: 0 0 200px;
         height: 113px;
     }
+    
+    .tile-overlay {
+        padding: 1rem 0.75rem 0.75rem;
+    }
+    
+    .tile-overlay h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .tile-overlay p {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+        -webkit-line-clamp: 1;
+    }
+    
+    .play-now-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .game-badge {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Animation for game tiles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.netflix-tile {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.netflix-tile:nth-child(1) { animation-delay: 0.1s; }
+.netflix-tile:nth-child(2) { animation-delay: 0.2s; }
+.netflix-tile:nth-child(3) { animation-delay: 0.3s; }
+.netflix-tile:nth-child(4) { animation-delay: 0.4s; }
+.netflix-tile:nth-child(5) { animation-delay: 0.5s; }
+.netflix-tile:nth-child(6) { animation-delay: 0.6s; }
+
+/* Loading state for images */
+.netflix-tile.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Game category filters */
+.game-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 4%;
+}
+
+.game-filter {
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.game-filter:hover, .game-filter.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Game search bar */
+.game-search {
+    margin: 0 4% 1.5rem;
+    position: relative;
+}
+
+.game-search input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.game-search i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.game-search input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.2);
 } 

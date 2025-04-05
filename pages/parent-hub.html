@@ -3,302 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Hub | Klinge's Corner</title>
-    <meta name="description" content="Access resources and tools to support your child's learning journey. Stay involved in their education with our comprehensive parent resources.">
+    <title>Parent Hub - Klinges Corner</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="subject.css">
+    <link rel="stylesheet" href="../css/subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .page-header {
-            height: 40vh;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-                        var(--header-bg) center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-
-        .page-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 1;
-        }
-
-        .page-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .page-description {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 4%;
-        }
-
-        .content-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .card-description {
-            color: #e6e6e6;
-            margin-bottom: 1rem;
-        }
-
-        .card-link {
-            display: inline-block;
-            color: #af0d16;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .card-link:hover {
-            color: #f40612;
-        }
-
-        @media (max-width: 768px) {
-            .page-header {
-                height: 30vh;
-            }
-
-            .page-title {
-                font-size: 2rem;
-            }
-
-            .page-description {
-                font-size: 1.1rem;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">
-            <a href="../index.html">
-                <i class="fas fa-graduation-cap"></i>
-                Klinge's Corner
-            </a>
+        <div class="nav-brand">
+            <a href="../index.html">Klinges Corner</a>
         </div>
-        <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="mathematics.html">Mathematics</a>
-            <a href="games.html">Games</a>
-            <a href="professional.html">Professional Development</a>
-            <a href="parent-hub.html" class="active">Parent Hub</a>
-            <a href="classroom-hub.html">Classroom Hub</a>
-        </div>
-        <div class="auth-buttons">
-            <button class="login-btn">Sign In</button>
-        </div>
-        <button class="mobile-menu-btn">
+        <button id="mobile-menu-btn" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
         </button>
+        <div id="mobile-menu">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="mathematics.html" class="nav-link">Mathematics</a>
+            <a href="games.html" class="nav-link">Games</a>
+            <a href="professional-development.html" class="nav-link">Professional Development</a>
+            <a href="parent-hub.html" class="nav-link active">Parent Hub</a>
+            <a href="classroom-hub.html" class="nav-link">Classroom Hub</a>
+        </div>
     </nav>
 
-    <header class="subject-hero parent-hub">
-        <div class="subject-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content animate-on-scroll">
             <h1>Parent Hub</h1>
-            <p>Support your child's educational journey with resources, tools, and guidance designed for parents.</p>
+            <p>Resources and tools to help parents support their children's education journey.</p>
+            <div class="hero-buttons">
+                <a href="#resources" class="play-btn">View Resources</a>
+                <a href="#overview" class="more-info-btn">Learn More</a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section class="overview-section">
-            <div class="page-content">
-                <h2>Overview</h2>
-                <p>Our Parent Hub provides comprehensive resources to help you support your child's learning and development.</p>
+    <!-- Overview Section -->
+    <section id="overview" class="overview-section">
+        <div class="section-content">
+            <h2 class="animate-on-scroll">Parent Hub Overview</h2>
+            <p class="animate-on-scroll">Our Parent Hub provides resources, guides, and tools to help parents actively participate in their children's education and support their learning journey.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item animate-on-scroll">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Learning Guides</h3>
+                    <p>Access comprehensive guides to help your child excel in various subjects.</p>
+                </div>
                 
-                <div class="overview-grid">
-                    <div class="overview-card">
-                        <i class="fas fa-book-reader"></i>
-                        <h3>Learning Support</h3>
-                        <p>Access guides and resources to help your child excel in their studies.</p>
+                <div class="feature-item animate-on-scroll">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Homework Help</h3>
+                    <p>Find resources and tips to assist your child with homework and assignments.</p>
+                </div>
+                
+                <div class="feature-item animate-on-scroll">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your child's academic progress and identify areas for improvement.</p>
+                </div>
+                
+                <div class="feature-item animate-on-scroll">
+                    <i class="fas fa-comments"></i>
+                    <h3>Parent-Teacher Communication</h3>
+                    <p>Learn effective strategies for communicating with teachers and staying involved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="section-content">
+            <h2 class="animate-on-scroll">Parent Resources</h2>
+            <p class="animate-on-scroll">Explore our collection of resources designed specifically for parents to support their children's education.</p>
+            
+            <div class="content-grid">
+                <!-- Learning Guides -->
+                <div class="content-card animate-on-scroll" data-category="guides">
+                    <div class="card-image">
+                        <img src="../images/content/learning-guides.jpg" alt="Learning Guides">
                     </div>
-                    <div class="overview-card">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="card-content">
+                        <h3>Learning Guides</h3>
+                        <p>Comprehensive guides to help your child excel in various subjects and topics.</p>
+                        <a href="#" class="card-link">View Guides <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Homework Help -->
+                <div class="content-card animate-on-scroll" data-category="homework">
+                    <div class="card-image">
+                        <img src="../images/content/homework-help.jpg" alt="Homework Help">
+                    </div>
+                    <div class="card-content">
+                        <h3>Homework Help</h3>
+                        <p>Resources and tips to assist your child with homework and assignments.</p>
+                        <a href="#" class="card-link">Get Help <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Progress Tracking -->
+                <div class="content-card animate-on-scroll" data-category="progress">
+                    <div class="card-image">
+                        <img src="../images/content/progress-tracking.jpg" alt="Progress Tracking">
+                    </div>
+                    <div class="card-content">
                         <h3>Progress Tracking</h3>
-                        <p>Monitor your child's academic progress and identify areas for improvement.</p>
-                    </div>
-                    <div class="overview-card">
-                        <i class="fas fa-comments"></i>
-                        <h3>Communication</h3>
-                        <p>Stay connected with teachers and receive regular updates about your child's education.</p>
+                        <p>Tools to monitor your child's academic progress and identify areas for improvement.</p>
+                        <a href="#" class="card-link">Track Progress <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="resources-section">
-            <div class="page-content">
-                <h2>Parent Resources</h2>
-                <p>Discover tools and materials designed to help you support your child's learning journey.</p>
                 
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Educational Guides</h3>
-                        <ul>
-                            <li><a href="#">Study Support Tips</a></li>
-                            <li><a href="#">Homework Help Guide</a></li>
-                            <li><a href="#">Learning Strategies</a></li>
-                        </ul>
+                <!-- Parent-Teacher Communication -->
+                <div class="content-card animate-on-scroll" data-category="communication">
+                    <div class="card-image">
+                        <img src="../images/content/parent-teacher.jpg" alt="Parent-Teacher Communication">
                     </div>
-                    <div class="resource-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Planning Tools</h3>
-                        <ul>
-                            <li><a href="#">Academic Calendar</a></li>
-                            <li><a href="#">Study Schedule Templates</a></li>
-                            <li><a href="#">Goal Setting Worksheets</a></li>
-                        </ul>
-                    </div>
-                    <div class="resource-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Community</h3>
-                        <ul>
-                            <li><a href="#">Parent Forums</a></li>
-                            <li><a href="#">Support Groups</a></li>
-                            <li><a href="#">Expert Advice</a></li>
-                        </ul>
+                    <div class="card-content">
+                        <h3>Parent-Teacher Communication</h3>
+                        <p>Strategies for effective communication with teachers and staying involved in your child's education.</p>
+                        <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="updates-section">
-            <div class="page-content">
-                <h2>Latest Updates</h2>
-                <p>Stay informed about your child's academic progress and upcoming events.</p>
-                
-                <div class="updates-grid">
-                    <div class="update-card">
-                        <div class="update-header">
-                            <h3>Progress Reports</h3>
-                            <span class="update-date">Updated Weekly</span>
-                        </div>
-                        <p>View detailed reports on your child's academic performance and engagement.</p>
-                        <div class="update-actions">
-                            <button class="view-btn">
-                                View Reports
-                                <i class="fas fa-chart-bar"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="update-card">
-                        <div class="update-header">
-                            <h3>Upcoming Events</h3>
-                            <span class="update-date">Next Event: May 15</span>
-                        </div>
-                        <p>Parent-teacher conferences and educational workshops schedule.</p>
-                        <div class="update-actions">
-                            <button class="view-btn">
-                                View Calendar
-                                <i class="fas fa-calendar"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <div class="page-content">
-                <h2>Need Help?</h2>
-                <p>Our support team is here to assist you with any questions or concerns.</p>
-                
-                <div class="contact-options">
-                    <a href="#" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email Support</h3>
-                        <p>Get in touch with our parent support team</p>
-                    </a>
-                    <a href="#" class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone Support</h3>
-                        <p>Speak directly with a support representative</p>
-                    </a>
-                    <a href="#" class="contact-card">
-                        <i class="fas fa-comments"></i>
-                        <h3>Live Chat</h3>
-                        <p>Chat with us for immediate assistance</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About Us</h3>
-                <p>Klinge's Corner is dedicated to providing high-quality educational resources for students, parents, and educators.</p>
+                <p>Klinges Corner provides high-quality educational resources for students, teachers, and parents.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
+            
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/pages/about.html">About</a></li>
-                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="mathematics.html">Mathematics</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="professional-development.html">Professional Development</a></li>
+                    <li><a href="parent-hub.html">Parent Hub</a></li>
+                    <li><a href="classroom-hub.html">Classroom Hub</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3>Contact Us</h3>
                 <ul>
-                    <li><a href="/pages/faq.html">FAQ</a></li>
-                    <li><a href="/pages/support.html">Support</a></li>
-                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="mailto:info@klingescorner.com"><i class="fas fa-envelope"></i> info@klingescorner.com</a></li>
+                    <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Education St, Learning City</a></li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+            <p>&copy; 2023 Klinges Corner. All rights reserved.</p>
         </div>
     </footer>
 
