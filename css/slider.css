@@ -19,168 +19,167 @@
 }
 
 .content-slider {
-    display: flex;
-    gap: clamp(1rem, 2vw, 2rem);
-    overflow-x: auto;
-    padding: clamp(0.5rem, 1vw, 1rem) 0;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    width: 100%;
-    max-width: min(100vw, 2000px);
-    margin: 0 auto;
-}
-
-/* Hide scrollbar */
-.content-slider::-webkit-scrollbar {
-    display: none;
-}
-
-/* Content Item */
-.content-item {
-    flex: 0 0 clamp(280px, 30vw, 400px);
-    min-height: clamp(300px, 40vh, 500px);
-    background: var(--card-bg);
-    border-radius: clamp(12px, 1.5vw, 18px);
+    position: relative;
+    height: 400px;
     overflow: hidden;
-    transition: var(--transition);
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    display: flex;
-    flex-direction: column;
 }
 
-/* Content Item Image */
-.content-item-image {
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: clamp(160px, 25vh, 300px);
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-/* Content Item Info */
-.content-item-info {
-    padding: clamp(1rem, 2vw, 1.5rem);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.5rem, 1vw, 1rem);
-}
-
-/* Content Item Title */
-.content-item-title {
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-    line-height: 1.2;
-    font-weight: 600;
-    margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
-}
-
-/* Content Item Description */
-.content-item-description {
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    line-height: 1.5;
-    color: var(--text-secondary);
-    margin-bottom: auto;
-}
-
-/* Progress Bar */
-.progress-bar {
-    width: 100%;
-    height: 4px;
-    background: var(--card-border);
-    border-radius: 2px;
-    overflow: hidden;
-    margin: clamp(0.5rem, 1vw, 1rem) 0;
-}
-
-.progress {
     height: 100%;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-out;
+    display: none;
+    will-change: transform, opacity;
+    touch-action: pan-y pinch-zoom;
 }
 
-/* Content Item Link */
-.content-item-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
+.slider-item.active {
+    opacity: 1;
+    display: block;
+    transform: translateX(0);
+}
+
+.slider-content {
+    display: flex;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.slider-content img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-text {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slider-text h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.slider-text p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.slider-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
     text-decoration: none;
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    font-weight: 500;
-    transition: var(--transition);
-    margin-top: auto;
+    border-radius: 4px;
+    transition: background-color 0.2s;
 }
 
-/* Slider Navigation */
+.slider-link:hover {
+    background: #0056b3;
+}
+
 .slider-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: clamp(40px, 5vw, 50px);
-    height: clamp(40px, 5vw, 50px);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--nav-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    transition: background-color 0.2s;
 }
 
 .slider-arrow:hover {
-    background: var(--card-hover);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .slider-arrow.prev {
-    left: clamp(-25px, -2vw, -15px);
+    left: 1rem;
 }
 
 .slider-arrow.next {
-    right: clamp(-25px, -2vw, -15px);
+    right: 1rem;
 }
 
-/* Responsive Adjustments */
+.image-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container.loaded img {
+    opacity: 1;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.image-container.loaded .loading-spinner {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .slider-content {
+        flex-direction: column;
+    }
+
+    .slider-content img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .slider-text {
+        width: 100%;
+        padding: 1rem;
+    }
+
     .content-slider {
-        gap: 1rem;
-        padding: 0.5rem 0;
-    }
-
-    .content-item {
-        flex: 0 0 85vw;
-        min-height: 350px;
-    }
-
-    .slider-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-}
-
-/* High DPI Screens */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .content-item-image {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-}
-
-/* Ultra-wide Screens */
-@media (min-width: 2560px) {
-    .content-slider {
-        max-width: 2400px;
-    }
-
-    .content-item {
-        flex: 0 0 clamp(300px, 25vw, 500px);
+        height: 500px;
     }
 } 

@@ -3,220 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Games - Klinges Corner</title>
+    <title>Educational Games | Klinge's Corner</title>
+    <meta name="description" content="Explore our collection of educational games designed to make learning fun and interactive.">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="subject.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="nav-brand">
-            <a href="../index.html">Klinges Corner</a>
+        <div class="logo">
+            <a href="../index.html">
+                <i class="fas fa-graduation-cap"></i>
+                Klinge's Corner
+            </a>
         </div>
         <div class="nav-links">
             <a href="../index.html">Home</a>
             <a href="mathematics.html">Mathematics</a>
             <a href="games.html" class="active">Games</a>
             <a href="professional.html">Professional Development</a>
-            <a href="parent.html">Parent Hub</a>
-            <a href="classroom.html">Classroom Hub</a>
+            <a href="parent-hub.html">Parent Hub</a>
+            <a href="classroom-hub.html">Classroom Hub</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn">Sign In</button>
         </div>
         <button class="mobile-menu-btn">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Educational Games</h1>
-            <p>Engage in fun and interactive learning experiences</p>
-        </div>
-    </section>
+    <main>
+        <section class="subject-hero games">
+            <div class="subject-content">
+                <h1>Educational Games</h1>
+                <p>Learn through play with our interactive educational games. Challenge yourself, track your progress, and have fun while mastering new concepts!</p>
+            </div>
+        </section>
 
-    <!-- Search and Filter Section -->
-    <section class="search-filter-section">
-        <div class="search-container">
-            <input type="text" id="game-search" placeholder="Search games...">
-            <i class="fas fa-search search-icon"></i>
-        </div>
-        <div class="filter-container">
-            <button class="game-filter active" data-filter="all">All Games</button>
-            <button class="game-filter" data-filter="math">Math</button>
-            <button class="game-filter" data-filter="language">Language</button>
-            <button class="game-filter" data-filter="science">Science</button>
-            <button class="game-filter" data-filter="programming">Programming</button>
-            <button class="game-filter" data-filter="social-studies">Social Studies</button>
-            <button class="game-filter" data-filter="arts">Arts & Music</button>
-            <button class="game-filter" data-filter="logic">Logic</button>
-        </div>
-    </section>
+        <section class="netflix-row">
+            <h2>Popular Games</h2>
+            <div class="netflix-slider">
+                <div class="netflix-tile">
+                    <img src="../images/content/math.jpg" alt="Math Quest">
+                    <div class="tile-overlay">
+                        <span class="game-badge popular">Popular</span>
+                        <h3>Math Quest</h3>
+                        <p>Embark on an epic adventure solving math puzzles and challenges.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/language.jpg" alt="Word Wizard">
+                    <div class="tile-overlay">
+                        <span class="game-badge trending">Trending</span>
+                        <h3>Word Wizard</h3>
+                        <p>Master vocabulary and spelling through magical word challenges.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/science.jpg" alt="Science Lab">
+                    <div class="tile-overlay">
+                        <span class="game-badge featured">Featured</span>
+                        <h3>Science Lab</h3>
+                        <p>Conduct virtual experiments and learn scientific principles.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Popular Games Section -->
-    <section class="netflix-row" data-category="popular">
-        <h2>Popular Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="math,popular">
-                <img src="../images/games/math.png" alt="Math Quest">
-                <div class="tile-content">
-                    <h3>Math Quest</h3>
-                    <p>Embark on an exciting mathematical adventure</p>
-                    <button class="play-now-btn">Play Now</button>
+        <section class="netflix-row">
+            <h2>Math Games</h2>
+            <div class="netflix-slider">
+                <div class="netflix-tile">
+                    <img src="../images/content/math.jpg" alt="Number Ninja">
+                    <div class="tile-overlay">
+                        <span class="game-badge new">New</span>
+                        <h3>Number Ninja</h3>
+                        <p>Slice through numbers and master arithmetic operations.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/geometry.jpg" alt="Geometry Dash">
+                    <div class="tile-overlay">
+                        <h3>Geometry Dash</h3>
+                        <p>Race through geometric shapes and solve spatial puzzles.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/algebra.jpg" alt="Algebra Adventure">
+                    <div class="tile-overlay">
+                        <h3>Algebra Adventure</h3>
+                        <p>Journey through algebraic equations in this epic quest.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="netflix-tile" data-categories="language,popular">
-                <img src="../images/games/language.png" alt="Word Wizard">
-                <div class="tile-content">
-                    <h3>Word Wizard</h3>
-                    <p>Master vocabulary through magical challenges</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-            <div class="netflix-tile" data-categories="science,popular">
-                <img src="../images/games/science.png" alt="Science Lab">
-                <div class="tile-content">
-                    <h3>Science Lab</h3>
-                    <p>Explore the wonders of science through experiments</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Math Games Section -->
-    <section class="netflix-row" data-category="math">
-        <h2>Math Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="math">
-                <img src="../images/games/geometry.png" alt="Geometry Explorer">
-                <div class="tile-content">
-                    <h3>Geometry Explorer</h3>
-                    <p>Discover the world of shapes and patterns</p>
-                    <button class="play-now-btn">Play Now</button>
+        <section class="netflix-row">
+            <h2>Language & Reading Games</h2>
+            <div class="netflix-slider">
+                <div class="netflix-tile">
+                    <img src="../images/content/reading.jpg" alt="Story Quest">
+                    <div class="tile-overlay">
+                        <h3>Story Quest</h3>
+                        <p>Create your own adventure while improving reading comprehension.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/grammar.jpg" alt="Grammar Hero">
+                    <div class="tile-overlay">
+                        <span class="game-badge new">New</span>
+                        <h3>Grammar Hero</h3>
+                        <p>Save the day by mastering English grammar rules.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+                <div class="netflix-tile">
+                    <img src="../images/content/vocabulary.jpg" alt="Vocabulary Voyage">
+                    <div class="tile-overlay">
+                        <h3>Vocabulary Voyage</h3>
+                        <p>Sail through seas of words and expand your vocabulary.</p>
+                        <button class="play-now-btn">
+                            <i class="fas fa-play"></i>
+                            Play Now
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="netflix-tile" data-categories="math">
-                <img src="../images/games/algebra.png" alt="Algebra Adventure">
-                <div class="tile-content">
-                    <h3>Algebra Adventure</h3>
-                    <p>Solve equations and unlock mathematical mysteries</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Language & Reading Games Section -->
-    <section class="netflix-row" data-category="language">
-        <h2>Language & Reading Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="language">
-                <img src="../images/games/reading.png" alt="Reading Adventure">
-                <div class="tile-content">
-                    <h3>Reading Adventure</h3>
-                    <p>Journey through stories and improve comprehension</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-            <div class="netflix-tile" data-categories="language">
-                <img src="../images/games/grammar.png" alt="Grammar Guru">
-                <div class="tile-content">
-                    <h3>Grammar Guru</h3>
-                    <p>Master grammar rules through fun challenges</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-            <div class="netflix-tile" data-categories="language">
-                <img src="../images/games/vocabulary.png" alt="Vocabulary Voyage">
-                <div class="tile-content">
-                    <h3>Vocabulary Voyage</h3>
-                    <p>Expand your word power through exciting quests</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programming Games Section -->
-    <section class="netflix-row" data-category="programming">
-        <h2>Programming Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="programming">
-                <img src="../images/games/coding.png" alt="Code Explorer">
-                <div class="tile-content">
-                    <h3>Code Explorer</h3>
-                    <p>Learn programming through interactive challenges</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Studies Games Section -->
-    <section class="netflix-row" data-category="social-studies">
-        <h2>Social Studies Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="social-studies">
-                <img src="../images/games/history.png" alt="Time Traveler">
-                <div class="tile-content">
-                    <h3>Time Traveler</h3>
-                    <p>Journey through history and explore different eras</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-            <div class="netflix-tile" data-categories="social-studies">
-                <img src="../images/games/geography.png" alt="World Explorer">
-                <div class="tile-content">
-                    <h3>World Explorer</h3>
-                    <p>Discover countries, cultures, and landmarks</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Arts & Music Games Section -->
-    <section class="netflix-row" data-category="arts">
-        <h2>Arts & Music Games</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="arts">
-                <img src="../images/games/music.png" alt="Rhythm Master">
-                <div class="tile-content">
-                    <h3>Rhythm Master</h3>
-                    <p>Learn music through rhythm and melody games</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-            <div class="netflix-tile" data-categories="arts">
-                <img src="../images/games/art.png" alt="Creative Canvas">
-                <div class="tile-content">
-                    <h3>Creative Canvas</h3>
-                    <p>Express yourself through digital art creation</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Logic & Problem Solving Section -->
-    <section class="netflix-row" data-category="logic">
-        <h2>Logic & Problem Solving</h2>
-        <div class="netflix-slider">
-            <div class="netflix-tile" data-categories="logic">
-                <img src="../images/games/logic.png" alt="Brain Teaser">
-                <div class="tile-content">
-                    <h3>Brain Teaser</h3>
-                    <p>Challenge your mind with puzzles and riddles</p>
-                    <button class="play-now-btn">Play Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to making education accessible and engaging through interactive learning experiences.</p>
+            </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -227,27 +180,18 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Us</h3>
+                <h3>Contact</h3>
                 <p>Email: info@klingescorner.com</p>
-                <p>Phone: (555) 123-4567</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
+                <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Klinges Corner. All rights reserved.</p>
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="../script.js"></script>
-    <script src="../js/games.js"></script>
 </body>
 </html> 

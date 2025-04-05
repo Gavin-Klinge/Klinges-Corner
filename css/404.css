@@ -1,145 +1,114 @@
 /* 404 Page Styles */
-:root {
-    /* Import variables from main styles */
-    --primary-color: #E31E24;
-    --primary-hover: #FF2329;
-    --background-dark: #000000;
-    --background-light: #1D1D1F;
-    --text-primary: #F5F5F7;
-    --text-secondary: rgba(245, 245, 247, 0.8);
-    --text-muted: rgba(245, 245, 247, 0.6);
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 2px 8px rgba(227, 30, 36, 0.2);
-    --shadow-md: 0 4px 16px rgba(227, 30, 36, 0.3);
-    --shadow-lg: 0 8px 32px rgba(227, 30, 36, 0.4);
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --radius-full: 9999px;
-}
-
 .error-page {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--background-dark);
-    padding: 2rem;
+    padding: 2rem 4%;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.95), 
+        rgba(0, 0, 0, 0.4)),
+        url('../images/headers/error-header.jpg') center/cover;
     position: relative;
-    overflow: hidden;
-}
-
-.error-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, 
-        rgba(227, 30, 36, 0.1) 0%, 
-        transparent 70%);
-    z-index: 1;
 }
 
 .error-content {
-    max-width: 600px;
     text-align: center;
-    position: relative;
-    z-index: 2;
-    animation: fadeInUp 1s ease forwards;
+    max-width: 600px;
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: 18px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-.error-code {
-    font-size: clamp(6rem, 15vw, 12rem);
+.error-content h1 {
+    font-size: 8rem;
     font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     line-height: 1;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--primary-hover) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(227, 30, 36, 0.3);
-}
-
-.error-title {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
     letter-spacing: -0.015em;
-    line-height: 1.2;
 }
 
-.error-message {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+.error-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+.error-content p {
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.016em;
 }
 
 .error-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-.error-button {
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-full);
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: var(--transition);
+.cta-button {
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    min-width: 30px;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    min-width: 120px;
     justify-content: center;
-}
-
-.primary-button {
+    gap: 8px;
     background-color: var(--primary-color);
     color: var(--text-primary);
+    text-decoration: none;
     border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
 }
 
-.primary-button:hover {
+.cta-button:hover {
     background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .secondary-button {
-    background-color: var(--card-bg);
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    min-width: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--button-bg);
     color: var(--text-primary);
-    border: 1px solid var(--card-border);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .secondary-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
 }
 
-.error-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30vh;
-    background: url('../images/headers/error-bg.jpg') center/cover;
-    opacity: 0.1;
-    z-index: 1;
-}
-
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -153,29 +122,46 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .error-page {
-        padding: 1rem;
+    .error-content {
+        padding: 2rem;
     }
-    
+
+    .error-content h1 {
+        font-size: 6rem;
+    }
+
+    .error-content h2 {
+        font-size: 2rem;
+    }
+
+    .error-content p {
+        font-size: 1.1rem;
+    }
+
     .error-actions {
         flex-direction: column;
     }
-    
-    .error-button {
+
+    .cta-button,
+    .secondary-button {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .error-code {
-        font-size: clamp(4rem, 12vw, 8rem);
+    .error-content {
+        padding: 1.5rem;
     }
-    
-    .error-title {
-        font-size: clamp(1.25rem, 3vw, 2rem);
+
+    .error-content h1 {
+        font-size: 5rem;
     }
-    
-    .error-message {
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
+
+    .error-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .error-content p {
+        font-size: 1rem;
     }
 } 
