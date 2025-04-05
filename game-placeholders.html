@@ -6,7 +6,7 @@
     <title>Game Placeholders</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 20px;
             background: #f0f0f0;
@@ -20,7 +20,7 @@
         }
         .placeholder {
             aspect-ratio: 4/3;
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -28,15 +28,39 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+        .placeholder-content {
+            position: relative;
+            z-index: 2;
         }
         .placeholder h2 {
             font-size: 24px;
             margin: 0 0 10px 0;
+            font-weight: 600;
         }
         .placeholder p {
             font-size: 16px;
             margin: 0;
             opacity: 0.9;
+            font-weight: 400;
         }
         .math { background: #4CAF50; }
         .language { background: #2196F3; }
@@ -46,22 +70,46 @@
         .reading { background: #009688; }
         .grammar { background: #673AB7; }
         .vocabulary { background: #E91E63; }
+        .coding { background: #795548; }
+        .history { background: #607D8B; }
+        .geography { background: #FF5722; }
+        .music { background: #3F51B5; }
+        .art { background: #8BC34A; }
+        .logic { background: #00BCD4; }
         
         .instructions {
             max-width: 800px;
             margin: 0 auto 40px;
             padding: 20px;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .game-container {
+            margin-bottom: 30px;
+        }
+        
+        .game-container h3 {
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.9;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <h1>Game Placeholders</h1>
@@ -77,67 +125,159 @@
     </div>
     
     <div class="grid">
-        <div>
-            <h3>math.jpg</h3>
+        <!-- Existing Games -->
+        <div class="game-container">
+            <h3>math.png</h3>
             <div class="placeholder math">
-                <h2>Math Quest</h2>
-                <p>Mathematics Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-calculator"></i></div>
+                    <h2>Math Quest</h2>
+                    <p>Mathematics Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>language.jpg</h3>
+        <div class="game-container">
+            <h3>language.png</h3>
             <div class="placeholder language">
-                <h2>Word Wizard</h2>
-                <p>Language Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-language"></i></div>
+                    <h2>Word Wizard</h2>
+                    <p>Language Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>science.jpg</h3>
+        <div class="game-container">
+            <h3>science.png</h3>
             <div class="placeholder science">
-                <h2>Science Lab</h2>
-                <p>Science Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-flask"></i></div>
+                    <h2>Science Lab</h2>
+                    <p>Science Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>geometry.jpg</h3>
+        <div class="game-container">
+            <h3>geometry.png</h3>
             <div class="placeholder geometry">
-                <h2>Geometry Dash</h2>
-                <p>Geometry Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-draw-polygon"></i></div>
+                    <h2>Geometry Dash</h2>
+                    <p>Geometry Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>algebra.jpg</h3>
+        <div class="game-container">
+            <h3>algebra.png</h3>
             <div class="placeholder algebra">
-                <h2>Algebra Adventure</h2>
-                <p>Algebra Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-square-root-alt"></i></div>
+                    <h2>Algebra Adventure</h2>
+                    <p>Algebra Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>reading.jpg</h3>
+        <div class="game-container">
+            <h3>reading.png</h3>
             <div class="placeholder reading">
-                <h2>Story Quest</h2>
-                <p>Reading Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-book-open"></i></div>
+                    <h2>Story Quest</h2>
+                    <p>Reading Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>grammar.jpg</h3>
+        <div class="game-container">
+            <h3>grammar.png</h3>
             <div class="placeholder grammar">
-                <h2>Grammar Hero</h2>
-                <p>Grammar Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h2>Grammar Hero</h2>
+                    <p>Grammar Game</p>
+                </div>
             </div>
         </div>
         
-        <div>
-            <h3>vocabulary.jpg</h3>
+        <div class="game-container">
+            <h3>vocabulary.png</h3>
             <div class="placeholder vocabulary">
-                <h2>Vocabulary Voyage</h2>
-                <p>Vocabulary Game</p>
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-book"></i></div>
+                    <h2>Vocabulary Voyage</h2>
+                    <p>Vocabulary Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New Games -->
+        <div class="game-container">
+            <h3>coding.png</h3>
+            <div class="placeholder coding">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h2>Code Explorer</h2>
+                    <p>Programming Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <h3>history.png</h3>
+            <div class="placeholder history">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-landmark"></i></div>
+                    <h2>Time Traveler</h2>
+                    <p>History Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <h3>geography.png</h3>
+            <div class="placeholder geography">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-globe-americas"></i></div>
+                    <h2>World Explorer</h2>
+                    <p>Geography Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <h3>music.png</h3>
+            <div class="placeholder music">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-music"></i></div>
+                    <h2>Rhythm Master</h2>
+                    <p>Music Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <h3>art.png</h3>
+            <div class="placeholder art">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-palette"></i></div>
+                    <h2>Creative Canvas</h2>
+                    <p>Art Game</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <h3>logic.png</h3>
+            <div class="placeholder logic">
+                <div class="placeholder-content">
+                    <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h2>Brain Teaser</h2>
+                    <p>Logic Game</p>
+                </div>
             </div>
         </div>
     </div>
