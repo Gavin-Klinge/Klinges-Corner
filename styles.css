@@ -29,6 +29,26 @@
     --space-unit: clamp(0.5rem, 1vw, 1rem);
     --container-padding: clamp(1rem, 4vw, 4rem);
     --section-spacing: clamp(2rem, 6vw, 6rem);
+    /* Responsive spacing system */
+    --spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --spacing-sm: clamp(0.5rem, 1vw, 1rem);
+    --spacing-md: clamp(1rem, 2vw, 2rem);
+    --spacing-lg: clamp(2rem, 4vw, 4rem);
+    --spacing-xl: clamp(4rem, 8vw, 8rem);
+    /* Responsive container widths */
+    --container-sm: min(640px, 90%);
+    --container-md: min(768px, 90%);
+    --container-lg: min(1024px, 90%);
+    --container-xl: min(1280px, 90%);
+    /* Responsive font sizes */
+    --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 1vw, 1rem);
+    --text-base: clamp(1rem, 1.2vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.5vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 2vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 2.5vw, 2rem);
+    --text-3xl: clamp(2rem, 3vw, 3rem);
+    --text-4xl: clamp(3rem, 4vw, 4rem);
 }
 
 body {
@@ -257,7 +277,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Content Sections */
 .content-section {
-    padding: 6rem 4%;
+    padding: var(--spacing-xl) var(--container-padding);
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: var(--background-light);
@@ -295,9 +318,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-slider {
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-md);
     overflow-x: auto;
-    padding: 1rem 0;
+    padding: var(--spacing-sm) 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -309,7 +332,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-item {
-    flex: 0 0 300px;
+    flex: 0 0 clamp(280px, 30vw, 300px);
+    min-height: clamp(300px, 40vh, 400px);
     background: var(--card-bg);
     border-radius: 18px;
     overflow: hidden;
@@ -413,8 +437,8 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.6);
     border: none;
@@ -425,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     z-index: 3;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
 
 .slider-arrow:hover {
@@ -434,11 +458,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-arrow.prev {
-    left: -25px;
+    left: clamp(-25px, -2vw, -15px);
 }
 
 .slider-arrow.next {
-    right: -25px;
+    right: clamp(-25px, -2vw, -15px);
 }
 
 /* Mobile Navigation */
@@ -498,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .content-section {
-        padding: 1.5rem 2%;
+        padding: var(--spacing-lg) var(--container-padding);
     }
 
     .content-section h2 {
@@ -561,8 +585,8 @@ html {
 
 /* Featured Hero Section */
 .featured-hero {
-    min-height: 80vh;
-    padding-top: 60px;
+    min-height: clamp(60vh, 80vh, 100vh);
+    padding: var(--spacing-xl) var(--container-padding);
     background: linear-gradient(to top, 
         rgba(0, 0, 0, 0.95) 0%, 
         rgba(0, 0, 0, 0.4) 60%, 
@@ -577,7 +601,8 @@ html {
 }
 
 .featured-content {
-    max-width: 600px;
+    max-width: var(--container-md);
+    width: 100%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
@@ -650,17 +675,17 @@ html {
 /* Footer */
 footer {
     background-color: var(--background-light);
-    padding: 4rem 2rem 2rem;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
     border-top: 1px solid var(--card-border);
 }
 
 .footer-content {
-    max-width: min(1400px, 90%);
+    max-width: var(--container-xl);
     margin: 0 auto;
     padding: calc(var(--space-unit) * 2);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-    gap: calc(var(--space-unit) * 2);
+    gap: var(--spacing-lg);
 }
 
 .footer-section h3 {
@@ -1022,5 +1047,66 @@ footer {
 
     .feature-item {
         padding: 1.5rem;
+    }
+}
+
+/* Add Windows-specific DPI scaling support */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    :root {
+        --space-unit: clamp(0.75rem, 1.2vw, 1.2rem);
+    }
+    
+    body {
+        font-size: clamp(16px, 1.2vw, 18px);
+    }
+}
+
+/* Add support for ultra-wide screens */
+@media (min-width: 2560px) {
+    :root {
+        --container-xl: min(1800px, 90%);
+        --space-unit: 1.5rem;
+    }
+    
+    .content-section {
+        padding: var(--spacing-xl) calc(var(--container-padding) * 1.5);
+    }
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: clamp(1rem, 3vw, 2rem);
+    }
+    
+    .content-section {
+        padding: var(--spacing-lg) var(--container-padding);
+    }
+    
+    .featured-hero {
+        min-height: 60vh;
+        padding: var(--spacing-lg) var(--container-padding);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Add support for different aspect ratios */
+@media (aspect-ratio: 16/9) {
+    .hero-section {
+        min-height: 90vh;
+    }
+}
+
+@media (aspect-ratio: 21/9) {
+    .hero-section {
+        min-height: 85vh;
+    }
+    
+    .content-section {
+        max-width: var(--container-xl);
     }
 } 
