@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🤖☠️ STEM Phishing Gotcha</title>
+  <title>🤖☠️ STEM Phishing Gotcha + Mini Game</title>
   <style>
+    :root{ --accent:#00ffc6; --danger:#ff5252; --note:#ffd6a5; }
+    *{box-sizing:border-box}
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
       color: #f1f1f1;
       display: flex;
       flex-direction: column;
@@ -16,48 +18,289 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
-    h1 {
-      font-size: 3em;
-      margin: 0.3em 0;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-    }
-    .skull {
-      font-size: 6em;
-      animation: pulse 1.5s infinite alternate;
-      color: #ff5252;
-      text-shadow: 0 0 15px #ff5252;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      100% { transform: scale(1.1); opacity: 1; }
-    }
-    .robot-head {
-      font-size: 5em;
-      color: #00ffc6;
-      text-shadow: 0 0 20px #00ffc6;
-      animation: flicker 2s infinite alternate;
-    }
-    @keyframes flicker {
-      0% { opacity: 0.7; }
-      100% { opacity: 1; }
-    }
-    .footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.8em;
-      color: #888;
-    }
+    h1{margin:.25em 0; font-size: clamp(24px, 4vw, 48px)}
+    p{max-width:680px}
+    .robot-head{font-size:4.4rem; color:var(--accent); text-shadow:0 0 18px rgba(0,255,198,.12)}
+    .skull{font-size:4.8rem; color:var(--danger); text-shadow:0 0 12px rgba(255,82,82,.12)}
+    .sidenote{margin-top:18px;font-size:.95rem;color:#ffd6a5;background:rgba(255,214,165,0.04);border:1px solid rgba(255,214,165,0.08);padding:10px 14px;border-radius:8px;max-width:680px}
+    .controls{margin-top:18px;display:flex;gap:12px;align-items:center;justify-content:center}
+    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#002; font-weight:700; cursor:pointer}
+    .btn.secondary{background:var(--note); color:#111}
+    .footer{position:absolute;bottom:12px;font-size:.82rem;color:#9aa}
+
+    /* Modal / Game overlay */
+    .overlay{position:fixed;inset:0;background:linear-gradient(rgba(2,6,23,.86), rgba(2,6,23,.95));display:none;align-items:center;justify-content:center;padding:24px}
+    .gamebox{width:900px;max-width:96vw;border-radius:12px;background:linear-gradient(180deg,#071224,#042033);padding:12px;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+    .info{color:#cfe; font-weight:700}
+    canvas{display:block;width:100%;height:auto;border-radius:8px;background:#000}
+    .game-controls{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .tiny{font-size:.85rem;color:#9aa}
+    .center{display:flex;gap:8px;align-items:center}
+
+    /* Small responsive tweaks */
+    @media(max-width:520px){ .gamebox{padding:8px} .toprow{flex-direction:column;align-items:flex-start} }
   </style>
 </head>
 <body>
-  <div class="robot-head" aria-hidden="true">🤖</div>
-  <div class="skull" aria-hidden="true">☠️</div>
-  <h1>YOU GOT PHISHED!</h1>
-  <p>Even the smartest bots sometimes click the wrong link. This page is a harmless classroom drill — no data collected. Use it to talk about hover-to-preview, verifying senders, and why urgency is a classic trap.</p>
+  <div>
+    <div class="robot-head" aria-hidden="true">🤖</div>
+    <div class="skull" aria-hidden="true">☠️</div>
+    <h1>YOU GOT PHISHED!</h1>
+    <p>Even the smartest bots click the wrong link sometimes. This harmless classroom drill exists to teach you to <strong>hover, verify, and slow down</strong>. Later you'll be graded on phishing-detection skills — this one is intentionally obvious.</p>
+
+    <div class="sidenote" role="note">
+      <strong>Reminder:</strong> This page also serves as a notice that you will be graded later on your ability to detect phishing links. This particular link is intentionally a very obvious phishing example for practice purposes.
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" class="btn">Play STEM Invaders ▶</button>
+      <button id="hintBtn" class="btn secondary">Quick Tips for Phish Detection</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="gamebox" role="dialog" aria-label="STEM Invaders game">
+      <div class="toprow">
+        <div class="info">STEM Invaders — themed: <span id="themeName">Atoms & Rockets</span></div>
+        <div class="center">
+          <div class="tiny" id="score">Score: 0</div>
+          <div style="width:8px"></div>
+          <button class="btn secondary" id="closeGame">Exit</button>
+        </div>
+      </div>
+      <canvas id="gameCanvas" width="800" height="420" aria-hidden="false"></canvas>
+      <div class="game-controls">
+        <div class="tiny">Controls: ← / → or A / D to move • Space to shoot</div>
+        <div class="tiny">Objective: Destroy the invading STEM critters — survive 3 waves!</div>
+      </div>
+    </div>
+  </div>
+
   <div class="footer">Made for classroom use • No tracking • Just a teaching moment.</div>
+
+  <script>
+  // ---------- Page UI ----------
+  const overlay = document.getElementById('overlay');
+  const playBtn = document.getElementById('playBtn');
+  const closeGame = document.getElementById('closeGame');
+  const hintBtn = document.getElementById('hintBtn');
+  const scoreLabel = document.getElementById('score');
+
+  playBtn.addEventListener('click', ()=>{ overlay.style.display='flex'; startGame(); });
+  closeGame.addEventListener('click', ()=>{ stopGame(); overlay.style.display='none'; });
+  hintBtn.addEventListener('click', ()=> alert('Tip: Hover over links to preview URL, check sender address carefully, and watch for urgency or strange grammar.'));
+
+  // ---------- Simple STEM Invaders Game ----------
+  // Lightweight, single-file; inspired by classic Space Invaders but STEM-themed.
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+  let raf = null;
+  let running = false;
+
+  // Game state
+  const state = {
+    w: canvas.width,
+    h: canvas.height,
+    player: {x:400, y:380, w:48, h:14, speed:6, cooldown:0},
+    bullets: [],
+    enemies: [],
+    enemyDir: 1,
+    enemySpeed: 0.4,
+    enemyRows: 3,
+    enemyCols: 8,
+    score: 0,
+    lives: 3,
+    wave: 1,
+    maxWaves: 3
+  };
+
+  function resetGame(){
+    state.player.x = state.w/2;
+    state.bullets = [];
+    state.enemies = [];
+    state.enemyDir = 1;
+    state.enemySpeed = 0.45 + (state.wave-1)*0.15;
+    state.score = 0;
+    state.lives = 3;
+    state.wave = 1;
+    initEnemies();
+    updateScore();
+  }
+
+  function initEnemies(){
+    state.enemies = [];
+    const margin = 40;
+    const spacingX = (state.w - margin*2) / state.enemyCols;
+    for(let r=0;r<state.enemyRows + state.wave-1;r++){
+      for(let c=0;c<state.enemyCols;c++){
+        state.enemies.push({x: margin + c*spacingX + spacingX/4, y: 40 + r*36, w:26, h:22, alive:true, kind: (r%2===0? 'atom':'bacter')});
+      }
+    }
+  }
+
+  // Controls
+  const keys = {};
+  window.addEventListener('keydown', e=>{ keys[e.key.toLowerCase()]=true; });
+  window.addEventListener('keyup', e=>{ keys[e.key.toLowerCase()]=false; });
+
+  function spawnBullet(){
+    if(state.player.cooldown>0) return;
+    state.bullets.push({x: state.player.x, y: state.player.y-10, r:4, speed:8});
+    state.player.cooldown = 12; // frames
+  }
+
+  function update(){
+    // player movement
+    if(keys['arrowleft'] || keys['a']) state.player.x -= state.player.speed;
+    if(keys['arrowright'] || keys['d']) state.player.x += state.player.speed;
+    if(keys[' '] || keys['space']) spawnBullet();
+    // clamp
+    state.player.x = Math.max(20, Math.min(state.w-20, state.player.x));
+    if(state.player.cooldown>0) state.player.cooldown--;
+
+    // bullets
+    for(let i=state.bullets.length-1;i>=0;i--){
+      const b = state.bullets[i]; b.y -= b.speed;
+      if(b.y < -10) state.bullets.splice(i,1);
+    }
+
+    // enemies movement
+    let leftMost = Infinity, rightMost = -Infinity, lowest = 0;
+    state.enemies.forEach(e=>{ if(!e.alive) return; leftMost = Math.min(leftMost, e.x); rightMost = Math.max(rightMost, e.x+e.w); lowest = Math.max(lowest,e.y+e.h); });
+    if(leftMost === Infinity){ // all dead
+      // next wave
+      state.wave++;
+      if(state.wave > state.maxWaves){ winGame(); return; }
+      initEnemies();
+      updateScore();
+      return;
+    }
+    if(rightMost > state.w-10 || leftMost < 10) state.enemyDir *= -1;
+    state.enemies.forEach(e=>{ if(!e.alive) return; e.x += state.enemyDir * state.enemySpeed; });
+
+    // enemy collisions with bullets
+    for(let i=state.bullets.length-1;i>=0;i--){
+      const b = state.bullets[i];
+      for(let j=0;j<state.enemies.length;j++){
+        const en = state.enemies[j];
+        if(!en.alive) continue;
+        if(b.x > en.x-6 && b.x < en.x+en.w+6 && b.y > en.y && b.y < en.y+en.h){
+          en.alive = false; state.bullets.splice(i,1); state.score += 10; updateScore(); break;
+        }
+      }
+    }
+
+    // simple enemy shooting: random chance to drop a shot
+    if(Math.random() < 0.01 + state.wave*0.004){
+      // pick a live column
+      const live = state.enemies.filter(e=>e.alive);
+      if(live.length) {
+        const shooter = live[Math.floor(Math.random()*live.length)];
+        // enemy bullet
+        state.bullets.push({x: shooter.x + shooter.w/2, y: shooter.y+shooter.h+6, r:5, speed:-3, from:'enemy'});
+      }
+    }
+
+    // enemy bullets hit player
+    for(let i=state.bullets.length-1;i>=0;i--){
+      const b = state.bullets[i];
+      if(b.from === 'enemy'){
+        if(b.x > state.player.x - 24 && b.x < state.player.x + 24 && b.y > state.player.y-10 && b.y < state.player.y+20){
+          state.bullets.splice(i,1); state.lives--; updateScore(); if(state.lives<=0) loseGame();
+        }
+      }
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,state.w,state.h);
+    // background stars
+    drawStars();
+    // draw player as rocket/test tube shaped
+    ctx.save();
+    ctx.translate(state.player.x, state.player.y);
+    // body
+    ctx.fillStyle = '#7ef1d9'; ctx.beginPath(); ctx.ellipse(0,0,22,10,0,0,Math.PI*2); ctx.fill();
+    // nose
+    ctx.fillStyle = '#c6ffeb'; ctx.beginPath(); ctx.moveTo(22,0); ctx.lineTo(30,6); ctx.lineTo(30,-6); ctx.closePath(); ctx.fill();
+    // fin
+    ctx.fillStyle = '#00d9a4'; ctx.fillRect(-22,8,8,4);
+    ctx.restore();
+
+    // draw enemies
+    state.enemies.forEach(e=>{
+      if(!e.alive) return;
+      if(e.kind === 'atom') drawAtom(e.x, e.y, e.w, e.h);
+      else drawBacter(e.x, e.y, e.w, e.h);
+    });
+
+    // draw bullets
+    state.bullets.forEach(b=>{
+      if(b.from === 'enemy') { ctx.fillStyle = '#ff9b9b'; ctx.fillRect(b.x-3,b.y-6,6,12); }
+      else { ctx.fillStyle = '#c7ffeb'; ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2); ctx.fill(); }
+    });
+
+    // HUD
+    ctx.fillStyle = '#9aa'; ctx.font = '14px system-ui'; ctx.fillText('Wave: ' + state.wave + '/' + state.maxWaves, 12, 18);
+    ctx.fillText('Lives: ' + state.lives, state.w - 80, 18);
+  }
+
+  // small helper drawings
+  function drawAtom(x,y,w,h){
+    // nucleus
+    ctx.fillStyle = '#ffd700'; ctx.beginPath(); ctx.arc(x+w/2, y+h/2, 6,0,Math.PI*2); ctx.fill();
+    // orbits
+    ctx.strokeStyle = '#7ef1d9'; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h/2, w/2, h/3, 0, 0, Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h/2, w/3, h/2, Math.PI/3, 0, Math.PI*2); ctx.stroke();
+  }
+  function drawBacter(x,y,w,h){
+    ctx.fillStyle = '#ff8fb3'; ctx.beginPath(); ctx.ellipse(x+w/2,y+h/2,w/1.4,h/1.6,0,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#ffd6a5'; for(let i=0;i<3;i++){ ctx.fillRect(x+6+i*8, y+4, 4, 3); }
+  }
+
+  // tiny starfield
+  const stars = Array.from({length:40}, ()=>({x:Math.random()*state.w, y:Math.random()*state.h, r: Math.random()*1.6+0.2}));
+  function drawStars(){ ctx.fillStyle = '#071b2a'; ctx.fillRect(0,0,state.w,state.h); stars.forEach(s=>{ ctx.fillStyle = 'rgba(255,255,255,'+(0.2+Math.random()*0.6)+')'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill(); }); }
+
+  // Game loop
+  function loop(){ update(); draw(); raf = requestAnimationFrame(loop); }
+
+  function startGame(){ if(running) return; running = true; state.score = 0; state.lives = 3; state.wave = 1; initEnemies(); updateScore(); raf = requestAnimationFrame(loop); }
+  function stopGame(){ running = false; cancelAnimationFrame(raf); }
+
+  function winGame(){ stopGame(); alert('Nice! You cleared all waves — STEM defenders win!'); overlay.style.display='none'; }
+  function loseGame(){ stopGame(); alert('Out of lives. Try again!'); overlay.style.display='none'; }
+
+  function updateScore(){ scoreLabel.textContent = 'Score: ' + state.score; }
+
+  // Start/pause handling when overlay closed
+  // Ensure canvas size matches CSS pixel size for crispness
+  function resizeCanvas(){ const rect = canvas.getBoundingClientRect(); canvas.width = Math.min(900, Math.floor(rect.width)); canvas.height = Math.floor(rect.width * 0.525); state.w = canvas.width; state.h = canvas.height; }
+  window.addEventListener('resize', ()=>{ resizeCanvas(); });
+
+  // ensure spacebar doesn't scroll page when playing
+  window.addEventListener('keydown', function(e){ if((e.code === 'Space' || e.key === ' ') && overlay.style.display==='flex'){ e.preventDefault(); } });
+
+  // initialize sizes when overlay opens
+  function initEnemiesAndSizes(){ resizeCanvas(); state.player.y = state.h - 30; initEnemies(); }
+
+  // Public starters
+  function startGamePublic(){ initEnemiesAndSizes(); startGame(); }
+  function startGame(){ initEnemiesAndSizes(); running=true; raf = requestAnimationFrame(loop); }
+
+  // Stop cleanup when exiting
+  function stopGame(){ running=false; cancelAnimationFrame(raf); }
+
+  // hook play button
+  playBtn.addEventListener('click', ()=>{ overlay.style.display='flex'; startGame(); });
+  closeGame.addEventListener('click', ()=>{ overlay.style.display='none'; stopGame(); });
+
+  // keep page accessible: allow ESC to close
+  window.addEventListener('keydown', e=>{ if(e.key === 'Escape' && overlay.style.display==='flex'){ overlay.style.display='none'; stopGame(); } });
+  </script>
 </body>
 </html>
