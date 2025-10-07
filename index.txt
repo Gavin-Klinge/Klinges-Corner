@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinge's Corner - Educational Resources</title>
+    <meta name="description" content="Access high-quality educational resources, interactive lessons, and learning tools for students, parents, and educators.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                Klinge's Corner
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="pages/mathematics.html">Mathematics</a>
+            <a href="pages/games.html">Games</a>
+            <a href="pages/professional.html">Professional Development</a>
+            <a href="pages/parent-hub.html">Parent Hub</a>
+            <a href="pages/classroom-hub.html">Classroom Hub</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-btn">Sign In</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Empowering Education</h1>
+            <p>Discover a world of learning opportunities designed to inspire and challenge students of all ages.</p>
+            <div class="hero-buttons">
+                <button class="play-btn">
+                    <i class="fas fa-play"></i>
+                    Explore Resources
+                </button>
+                <button class="more-info-btn">
+                    <i class="fas fa-info-circle"></i>
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="featured" class="featured-section">
+            <div class="section-content">
+                <h2>Featured Resources</h2>
+                <p>Explore our most popular educational materials and interactive learning tools.</p>
+                
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/math.jpg" alt="Mathematics Resources">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mathematics</h3>
+                            <p>Master mathematical concepts through interactive lessons and practice problems.</p>
+                            <a href="/pages/mathematics.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/games.jpg" alt="Educational Games">
+                        </div>
+                        <div class="card-content">
+                            <h3>Educational Games</h3>
+                            <p>Learn through play with our interactive educational games.</p>
+                            <a href="pages/games.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-image">
+                            <img src="images/featured/professional.jpg" alt="Professional Development">
+                        </div>
+                        <div class="card-content">
+                            <h3>Professional Development</h3>
+                            <p>Build your future with essential life skills and career preparation.</p>
+                            <a href="pages/professional.html" class="card-link">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="section-content">
+                <h2>Why Choose Klinge's Corner?</h2>
+                <p>Experience education differently with our innovative approach to learning.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Interactive Learning</h3>
+                        <p>Engage with dynamic content and real-time feedback systems.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Support</h3>
+                        <p>Connect with peers and educators in our vibrant learning community.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your learning journey with detailed analytics and insights.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Access</h3>
+                        <p>Learn anywhere, anytime with our responsive platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Klinge's Corner is dedicated to providing high-quality educational resources for students, parents, and educators.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="pages/mathematics.html">Mathematics</a></li>
+                    <li><a href="pages/games.html">Games</a></li>
+                    <li><a href="pages/professional.html">Professional Development</a></li>
+                    <li><a href="pages/parent-hub.html">Parent Hub</a></li>
+                    <li><a href="pages/classroom-hub.html">Classroom Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/pages/professional-development.html">Professional Development</a></li>
+                    <li><a href="/pages/life-skills.html">Life Skills</a></li>
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Klinge's Corner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
