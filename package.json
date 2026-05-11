@@ -1,12 +1,37 @@
 {
-  "name": "klinges-corner",
-  "version": "1.0.0",
-  "description": "Mr. Klinge's Corner - Educational Resource Hub",
-  "main": "js/generate-placeholders.js",
+  "name": "consistency-fit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mobile-first fitness accountability starter app for sustainable fat loss and habit consistency.",
   "scripts": {
-    "generate-images": "node js/generate-placeholders.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "export": "next build",
+    "ios:init": "npm run build && npx cap add ios",
+    "ios:sync": "npm run build && npx cap sync ios",
+    "ios:open": "npx cap open ios"
   },
   "dependencies": {
-    "canvas": "^2.11.2"
+    "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.468.0",
+    "next": "^14.2.33",
+    "postcss": "^8.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.18",
+    "@capacitor/core": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.24",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.33",
+    "typescript": "^5.9.3",
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/ios": "^6.2.1"
   }
-} 
+}

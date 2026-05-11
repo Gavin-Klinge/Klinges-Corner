@@ -1,117 +1,126 @@
-# Klinge's Corner - Education Meets Innovation
+# Consistency Fit
 
-A comprehensive educational platform focused on STEM education and professional development, hosted on GitHub Pages.
+A modern, mobile-first fitness accountability starter app focused on sustainable fat loss, habit consistency, and realistic lifestyle adherence. The product direction intentionally rewards partial completion, recovery, and momentum instead of perfection or shame-based fitness culture.
 
-## Project Structure
+## Tech stack
 
-```
-├── index.html              # Main landing page
-├── styles.css              # Main stylesheet
-├── script.js               # Main JavaScript functionality
-├── pages/                  # Subject-specific pages and resources
-│   ├── template.html       # Base template for subject pages
-│   ├── subject.js          # Common subject page functionality
-│   ├── subject.css         # Common subject page styles
-│   ├── mathematics.html    # Mathematics subject page
-│   ├── science.html        # Science subject page
-│   ├── programming.html    # Programming subject page
-│   ├── ide.html           # Interactive Development Environment
-│   ├── ide.js             # IDE functionality
-│   ├── ide.css            # IDE styles
-│   └── resources/         # Subject-specific resources
-│       ├── spheroblueprints/
-│       ├── pd/
-│       ├── poe/
-│       ├── ozaria/
-│       ├── iconicdrones/
-│       ├── finances/
-│       ├── games/
-│       ├── digitalliteracy/
-│       ├── cs50/
-│       ├── csp/
-│       └── codecombat/
+- Next.js App Router
+- React + TypeScript
+- Tailwind CSS
+- PWA manifest starter with iOS standalone metadata
+- Capacitor configuration for opening the exported web app in Xcode
+- Local storage state for MVP persistence
+- Componentized UI and data modules for future backend migration
+
+## Project structure
+
+```text
+src/
+  app/                 Next.js app shell, layout, global styles, and main page
+  components/          Reusable UI primitives: progress rings, bars, charts, sections
+  data/                Mock data, exercise library, and 10-week program generator
+  lib/                 Fitness calculations, targets, local-storage hook
+  types/               Shared TypeScript domain types
+public/
+  manifest.webmanifest PWA metadata starter
+  icon.svg             App icon source for PWA/Capacitor asset generation
+capacitor.config.ts    iOS wrapper configuration; exports Next static output from out/
 ```
 
-## Features
+## MVP feature coverage
 
-- Interactive learning modules
-- Professional development resources
-- Parent hub
-- Classroom hub
-- STEM-focused content
-- Gamified education elements
-- 3D creativity tools
-- Client-side code execution using Pyodide
-- Static site hosting for fast loading
-- Custom domain support (www.klingescorner.com)
+- Dashboard with calories, protein, steps, water, streak, compliance, weekly phase, and weight trend
+- 10-week program system with bodyweight week 1 and kettlebell/band progression for weeks 2-10
+- Workout experience with exercise completion, partial completion, swaps, rest timers, demo placeholders, muscles worked, modifications, and progressions
+- Simple nutrition tracking with quick-add foods, protein-first logging, and Damage Control Mode for social meals and vacations
+- Daily accountability check-in, compliance score, weekly scorecards, streak psychology, and habit heatmap
+- Progress tracking for weight, waist, progress photos, pushup max, walking distance, and workout completion
+- Busy Week / Vacation Mode that reduces goals to sustainable anchors
+- Exercise library with instructions, difficulty, progression path, and muscles worked
 
-## Getting Started
+## Run locally in a browser
 
-1. Clone the repository
-2. Open `index.html` in your web browser
-3. Navigate through different sections using the navigation menu
+```bash
+npm install
+npm run dev
+```
 
-## Development
+Open `http://localhost:3000`.
 
-The project uses a template-based approach where subject pages inherit from `template.html`. Common styles and functionality are shared through `subject.css` and `subject.js`.
+## Build as an iOS-friendly app in Xcode
 
-Since this is a static site hosted on GitHub Pages:
-- All code execution happens client-side
-- No server-side processing is required
-- Content is served directly from GitHub's CDN
-- Updates are deployed automatically when changes are pushed to the main branch
+This project is still a web-first MVP, but it is configured to export static Next.js files and wrap them with Capacitor so you can open the app in Xcode and run it on an iPhone simulator or device.
 
-### Local Development
+### 1. Prerequisites
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/klinges-corner.git
-   cd klinges-corner
-   ```
+Install these on macOS:
 
-2. Make your changes locally
+- Xcode from the Mac App Store
+- Xcode command-line tools: `xcode-select --install`
+- Node.js 20 LTS or newer
+- CocoaPods if your local Capacitor install requires it: `sudo gem install cocoapods`
 
-3. Test your changes by opening `index.html` in your browser
+### 2. Install JavaScript dependencies
 
-4. Commit and push your changes:
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   git push origin main
-   ```
+```bash
+npm install
+```
 
-### GitHub Pages Deployment
+### 3. Create the iOS project
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process is handled by GitHub Actions.
+Run this once after dependencies are installed:
 
-To enable GitHub Pages:
-1. Go to your repository's Settings
-2. Navigate to "Pages" in the sidebar
-3. Under "Source", select "GitHub Actions"
-4. The site will be available at `https://yourusername.github.io/klinges-corner`
+```bash
+npm run ios:init
+```
 
-### Custom Domain Setup
+That command builds the static Next.js export into `out/` and creates an `ios/` folder using `capacitor.config.ts`.
 
-The site uses a custom domain (www.klingescorner.com). To set up a custom domain:
-1. Add your domain to the CNAME file
-2. Configure your DNS settings to point to GitHub Pages
-3. Enable HTTPS in your repository's GitHub Pages settings
+### 4. Open in Xcode
 
-## Contributing
+```bash
+npm run ios:open
+```
 
-Please read our contributing guidelines before submitting pull requests.
+In Xcode:
 
-## License
+1. Select the `App` project target.
+2. Choose a signing team under **Signing & Capabilities** if you want to run on a physical iPhone.
+3. Pick an iPhone simulator or connected device.
+4. Press **Run**.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 5. Sync future web changes into Xcode
 
-## Acknowledgments
+Whenever you update the React/Next app, run:
 
-- Monaco Editor for the code editor
-- Pyodide for Python execution in the browser
-- Font Awesome for icons
-- GitHub Pages for hosting
+```bash
+npm run ios:sync
+```
 
-## Support
+Then reopen or rerun the project in Xcode. Capacitor copies the latest `out/` build into the native iOS shell.
 
-For support, please open an issue in the GitHub repository or contact the development team. 
+### 6. iOS polish notes
+
+- The app uses `viewport-fit=cover`, standalone Apple web-app metadata, safe-area padding, and a safe-area-aware bottom tab bar for notched iPhones.
+- The included SVG icon is a starter source. Before App Store distribution, generate full iOS PNG icon and splash assets and add them to `ios/App/App/Assets.xcassets`.
+- For TestFlight/App Store builds, update `appId` in `capacitor.config.ts` to match your Apple Developer bundle identifier.
+
+## Useful checks
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+## Future scaling ideas
+
+- Replace local storage with a typed persistence adapter backed by Supabase, PostgreSQL, or SQLite
+- Add authentication and per-user program start dates
+- Integrate Apple Health, Google Fit, and wearable step syncing
+- Add notifications for check-ins, water, walking, and planned workouts
+- Support progress photo upload storage and encrypted body metrics
+- Add AI coaching insights that summarize trends without guilt-based language
+- Build a coach/admin view for accountability groups
+- Add offline-first service worker caching for full PWA behavior
+- Add native iOS plugins through Capacitor for haptics, notifications, HealthKit, and camera/photo upload
