@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 48, 79, 0.16), transparent 34rem),
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.08), transparent 28rem),
+    #07080b;
+  color: #f7f7f8;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button, a, input {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.ios-safe-shell {
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+  padding-bottom: max(7rem, calc(7rem + env(safe-area-inset-bottom)));
+}
+
+.ios-tabbar {
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-[2rem] border border-white/10 bg-white/[0.055] shadow-card backdrop-blur-xl;
+  }
+  .soft-button {
+    @apply rounded-full px-4 py-3 text-sm font-semibold transition active:scale-[0.98];
+  }
+}
